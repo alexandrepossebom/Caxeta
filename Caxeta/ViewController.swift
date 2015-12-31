@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        players.append(Player(name: "jaca"))
+        players.append(Player(name: "jaça"))
     }
     
     @IBAction func addPlayer(sender: AnyObject) {
