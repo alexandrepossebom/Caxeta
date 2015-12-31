@@ -33,62 +33,68 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-ky-5Fw">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="111" y="11" width="18" height="20.5"/>
+                                                    </variation>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxo-15-hPh">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Play"/>
-                                                    <connections>
-                                                        <action selector="buttonTouched:" destination="LRI-Dx-RCQ" eventType="touchUpInside" id="z2D-C2-vbe"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-sA-peS">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="15" y="14" width="46" height="21"/>
-                                                    </variation>
                                                 </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kce-z1-PGm">
+                                                    <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                                    <segments>
+                                                        <segment title="Play"/>
+                                                        <segment title="Run"/>
+                                                    </segments>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="140" y="8" width="81" height="29"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="changedPlayOrRun:" destination="LRI-Dx-RCQ" eventType="valueChanged" id="6O1-3q-ajc"/>
+                                                    </connections>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="bxo-15-hPh" secondAttribute="trailing" constant="16" id="6Ku-Wg-Zz8"/>
                                                 <constraint firstItem="4dC-ky-5Fw" firstAttribute="centerX" secondItem="2i3-eQ-TSR" secondAttribute="centerX" id="Jmg-Vd-GSp"/>
                                                 <constraint firstItem="Ccs-sA-peS" firstAttribute="centerY" secondItem="2i3-eQ-TSR" secondAttribute="centerY" id="llr-QT-0Nb"/>
                                                 <constraint firstItem="Ccs-sA-peS" firstAttribute="leading" secondItem="2i3-eQ-TSR" secondAttribute="leading" constant="15" id="mJd-Ku-05D"/>
-                                                <constraint firstItem="bxo-15-hPh" firstAttribute="centerY" secondItem="2i3-eQ-TSR" secondAttribute="centerY" id="pzz-zK-0fu"/>
+                                                <constraint firstAttribute="trailing" secondItem="kce-z1-PGm" secondAttribute="trailing" constant="19" id="ohQ-Pg-eBk"/>
                                                 <constraint firstItem="4dC-ky-5Fw" firstAttribute="centerY" secondItem="2i3-eQ-TSR" secondAttribute="centerY" id="wGx-gh-n2R"/>
+                                                <constraint firstItem="kce-z1-PGm" firstAttribute="centerY" secondItem="2i3-eQ-TSR" secondAttribute="centerY" id="xMV-1N-Tsn"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="4dC-ky-5Fw"/>
-                                                    <exclude reference="bxo-15-hPh"/>
                                                     <exclude reference="Ccs-sA-peS"/>
+                                                    <exclude reference="kce-z1-PGm"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="llr-QT-0Nb"/>
-                                                    <exclude reference="mJd-Ku-05D"/>
                                                     <exclude reference="Jmg-Vd-GSp"/>
                                                     <exclude reference="wGx-gh-n2R"/>
-                                                    <exclude reference="6Ku-Wg-Zz8"/>
-                                                    <exclude reference="pzz-zK-0fu"/>
+                                                    <exclude reference="llr-QT-0Nb"/>
+                                                    <exclude reference="mJd-Ku-05D"/>
+                                                    <exclude reference="ohQ-Pg-eBk"/>
+                                                    <exclude reference="xMV-1N-Tsn"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="4dC-ky-5Fw"/>
-                                                    <include reference="bxo-15-hPh"/>
                                                     <include reference="Ccs-sA-peS"/>
+                                                    <include reference="kce-z1-PGm"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="llr-QT-0Nb"/>
-                                                    <include reference="mJd-Ku-05D"/>
                                                     <include reference="Jmg-Vd-GSp"/>
                                                     <include reference="wGx-gh-n2R"/>
-                                                    <include reference="6Ku-Wg-Zz8"/>
-                                                    <include reference="pzz-zK-0fu"/>
+                                                    <include reference="llr-QT-0Nb"/>
+                                                    <include reference="mJd-Ku-05D"/>
+                                                    <include reference="ohQ-Pg-eBk"/>
+                                                    <include reference="xMV-1N-Tsn"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -105,6 +111,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohr-hA-gri">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Start Round"/>
+                                <connections>
+                                    <action selector="startRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FhH-c8-E7h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdE-AL-kg6">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>

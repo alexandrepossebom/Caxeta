@@ -11,8 +11,6 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    var players = [Player]()
-    
     
     @IBOutlet weak var tabletView: UITableView!
     
@@ -20,10 +18,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        players.append(Player(name: "jaça"))
+        DAO.players.append(Player(name: "jaça"))
+        DAO.players.append(Player(name: "xande"))
+
     }
     
-    @IBAction func addPlayer(sender: AnyObject) {
+    
+    @IBAction func startRound(sender: UIButton) {
+        
+        
+    }
+    
+    @IBAction func addPlayer(sender: UIButton) {
         
         let alert = UIAlertController(title: "New user", message: "Input username:", preferredStyle: .Alert)
 
@@ -34,7 +40,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
             (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            self.players.append(Player(name: textField.text!))
+            let name = textField.text!
+        
+            if(!DAO.containsUser(name)){
+                DAO.players.append(Player(name: name))
+            }
+
             self.tabletView.reloadData()
             
         }))
@@ -51,15 +62,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayer", forIndexPath: indexPath) as! PlayerTableViewCell
                 
-        cell.labelNome.text = players[indexPath.row].name
+        cell.labelNome.text = DAO.players[indexPath.row].name
         
-        cell.player = players[indexPath.row]
+        cell.player = DAO.players[indexPath.row]
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        return DAO.players.count
     }
 
 }
