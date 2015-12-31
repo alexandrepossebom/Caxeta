@@ -12,6 +12,8 @@
 		AC83729E1C316152007578DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC83729C1C316152007578DA /* Main.storyboard */; };
 		AC8372A01C316152007578DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC83729F1C316152007578DA /* Assets.xcassets */; };
 		AC8372A31C316152007578DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8372A11C316152007578DA /* LaunchScreen.storyboard */; };
+		AC8372AB1C316D9F007578DA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */; };
+		AC8372AD1C317579007578DA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AC1C317579007578DA /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AC83729F1C316152007578DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC8372A21C316152007578DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC8372A41C316152007578DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		AC8372AC1C317579007578DA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				AC83729F1C316152007578DA /* Assets.xcassets */,
 				AC8372A11C316152007578DA /* LaunchScreen.storyboard */,
 				AC8372A41C316152007578DA /* Info.plist */,
+				AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */,
+				AC8372AC1C317579007578DA /* Player.swift */,
 			);
 			path = Caxeta;
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8372AB1C316D9F007578DA /* PlayerTableViewCell.swift in Sources */,
+				AC8372AD1C317579007578DA /* Player.swift in Sources */,
 				AC83729B1C316152007578DA /* ViewController.swift in Sources */,
 				AC8372991C316152007578DA /* AppDelegate.swift in Sources */,
 			);
