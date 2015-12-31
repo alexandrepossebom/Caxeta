@@ -15,6 +15,8 @@
 		AC8372A31C316152007578DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8372A11C316152007578DA /* LaunchScreen.storyboard */; };
 		AC8372AB1C316D9F007578DA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */; };
 		AC8372AD1C317579007578DA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AC1C317579007578DA /* Player.swift */; };
+		ACC1E62F1C35B521005B3DB1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */; };
+		ACC1E6311C35B899005B3DB1 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AC8372A41C316152007578DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		AC8372AC1C317579007578DA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */,
 				AC8372AC1C317579007578DA /* Player.swift */,
 				AC11464D1C354DB7002F6596 /* DAO.swift */,
+				ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */,
+				ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */,
 			);
 			path = Caxeta;
 			sourceTree = "<group>";
@@ -144,10 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC1E6311C35B899005B3DB1 /* GameTableViewCell.swift in Sources */,
 				AC8372AB1C316D9F007578DA /* PlayerTableViewCell.swift in Sources */,
 				AC8372AD1C317579007578DA /* Player.swift in Sources */,
 				AC83729B1C316152007578DA /* ViewController.swift in Sources */,
 				AC8372991C316152007578DA /* AppDelegate.swift in Sources */,
+				ACC1E62F1C35B521005B3DB1 /* GameViewController.swift in Sources */,
 				AC11464E1C354DB7002F6596 /* DAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

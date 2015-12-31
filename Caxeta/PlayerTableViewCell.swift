@@ -16,14 +16,7 @@ class PlayerTableViewCell: UITableViewCell {
     
     @IBAction func changedPlayOrRun(sender: UISegmentedControl) {
         
-        
         let play = (sender.selectedSegmentIndex == 0)
-        
-        if(play){
-            print("play")
-        }else{
-            print("run")
-        }
         
         _ = DAO.players.map { (p) -> Player in
             if(p.name == player?.name){
@@ -33,10 +26,6 @@ class PlayerTableViewCell: UITableViewCell {
         }
         
         print(DAO.players)
-        
-        for p in DAO.players{
-            print("\(p.name) : \(p.points) : \(p.play) ")
-        }
         
     }
 

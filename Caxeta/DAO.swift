@@ -12,13 +12,13 @@ public class DAO{
     static var players = [Player]()
     
     static func containsUser(name:String) -> Bool{
-        let runningPlayers = players.filter { (p) -> Bool in
+        let n = players.filter { (p) -> Bool in
             p.name == name
         }
-        return runningPlayers.count > 0
+        return n.count > 0
     }
     
-    static var runningPlayers = players.filter { (p) -> Bool in
+    static var playPlayers = players.filter { (p) -> Bool in
         p.play
     }
     
