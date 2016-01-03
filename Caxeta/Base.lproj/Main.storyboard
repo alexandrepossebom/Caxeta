@@ -35,9 +35,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="111" y="11.5" width="18" height="20.5"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-sA-peS">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -51,9 +48,6 @@
                                                         <segment title="Play"/>
                                                         <segment title="Run"/>
                                                     </segments>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="140" y="8" width="81" height="29"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="changedPlayOrRun:" destination="LRI-Dx-RCQ" eventType="valueChanged" id="6O1-3q-ajc"/>
                                                     </connections>
@@ -127,9 +121,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffN-Q1-ziq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="New"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="14" y="562" width="31" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDj-Ad-9m5"/>
                                 </connections>
@@ -210,6 +201,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="G1b-ej-6my"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tabletView" destination="5WK-Od-HpZ" id="Q7z-Y9-cgB"/>
                     </connections>
@@ -250,9 +242,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-0C-Llg">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <state key="normal" title="Winner"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="345" y="7" width="49" height="30"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="buttonWin:" destination="fbX-De-vn1" eventType="touchUpInside" id="2jN-Lv-GxW"/>
                                                     </connections>
@@ -342,6 +331,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlY-ws-LiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
