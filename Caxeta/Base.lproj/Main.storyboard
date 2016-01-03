@@ -249,9 +249,9 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-0C-Llg">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="346" y="7" width="46" height="30"/>
+                                                    <state key="normal" title="Winner"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="345" y="7" width="49" height="30"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="buttonWin:" destination="fbX-De-vn1" eventType="touchUpInside" id="2jN-Lv-GxW"/>
@@ -260,9 +260,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="806-bt-7cm" firstAttribute="centerY" secondItem="98M-zM-rRN" secondAttribute="centerY" id="8lE-mF-hu7"/>
+                                                <constraint firstItem="cNB-0C-Llg" firstAttribute="top" secondItem="98M-zM-rRN" secondAttribute="top" constant="7" id="Bsn-Ha-x7L"/>
+                                                <constraint firstAttribute="bottom" secondItem="cNB-0C-Llg" secondAttribute="bottom" constant="7" id="Cki-dx-NUD"/>
+                                                <constraint firstItem="cNB-0C-Llg" firstAttribute="centerY" secondItem="98M-zM-rRN" secondAttribute="centerY" id="Pgr-kh-lUu"/>
                                                 <constraint firstItem="cNB-0C-Llg" firstAttribute="centerX" secondItem="98M-zM-rRN" secondAttribute="centerX" id="dC5-Bz-imV"/>
                                                 <constraint firstAttribute="trailing" secondItem="cNB-0C-Llg" secondAttribute="trailing" constant="15" id="iy8-5y-Gag"/>
                                                 <constraint firstItem="806-bt-7cm" firstAttribute="leading" secondItem="98M-zM-rRN" secondAttribute="leading" constant="15" id="jOI-Cl-hPE"/>
+                                                <constraint firstAttribute="trailing" secondItem="cNB-0C-Llg" secondAttribute="trailing" constant="6" id="tIq-oP-APX"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -270,10 +274,14 @@
                                                     <exclude reference="cNB-0C-Llg"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="dC5-Bz-imV"/>
-                                                    <exclude reference="iy8-5y-Gag"/>
                                                     <exclude reference="8lE-mF-hu7"/>
                                                     <exclude reference="jOI-Cl-hPE"/>
+                                                    <exclude reference="Bsn-Ha-x7L"/>
+                                                    <exclude reference="Cki-dx-NUD"/>
+                                                    <exclude reference="Pgr-kh-lUu"/>
+                                                    <exclude reference="dC5-Bz-imV"/>
+                                                    <exclude reference="iy8-5y-Gag"/>
+                                                    <exclude reference="tIq-oP-APX"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -282,10 +290,14 @@
                                                     <include reference="cNB-0C-Llg"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="dC5-Bz-imV"/>
-                                                    <include reference="iy8-5y-Gag"/>
                                                     <include reference="8lE-mF-hu7"/>
                                                     <include reference="jOI-Cl-hPE"/>
+                                                    <exclude reference="Bsn-Ha-x7L"/>
+                                                    <exclude reference="Cki-dx-NUD"/>
+                                                    <include reference="Pgr-kh-lUu"/>
+                                                    <exclude reference="dC5-Bz-imV"/>
+                                                    <include reference="iy8-5y-Gag"/>
+                                                    <exclude reference="tIq-oP-APX"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
