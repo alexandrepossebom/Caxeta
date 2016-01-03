@@ -14,12 +14,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tabletView: UITableView!
     
+    var deletePlayerIndexPath: NSIndexPath? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        DAO.players.append(Player(name: "jaça"))
-//        DAO.players.append(Player(name: "xande"))
-//        DAO.players.append(Player(name: "marcinha"))
+        self.title = "Caxeta"
     }
     
     @IBAction func newGame(sender: UIButton) {
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let alert = UIAlertController(title: "New user", message: "Input username:", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.text = "Name"
+            textField.text = ""
         }
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
@@ -40,12 +40,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let textField = alert.textFields![0] as UITextField
             let name = textField.text!
             
-            if(!DAO.containsUser(name)){
+            if(!DAO.containsUser(name) && name.characters.count > 0){
                 DAO.players.append(Player(name: name))
+                DAO.saveGame()
+                
+                
+                // Update Table Data
+                self.tabletView.beginUpdates()
+                self.tabletView.insertRowsAtIndexPaths([NSIndexPath(forRow: DAO.players.count-1, inSection: 0)], withRowAnimation: .Automatic)
+                self.tabletView.endUpdates()
             }
-            
-            self.tabletView.reloadData()
-            
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -71,6 +75,41 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidAppear(animated: Bool) {
         self.tabletView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            deletePlayerIndexPath = indexPath
+            let playerToDelete = DAO.players[indexPath.row]
+            confirmDelete(playerToDelete)
+        }
+    }
+    
+    func handleDeletePlayer(alertAction: UIAlertAction!) -> Void {
+        if let indexPath = deletePlayerIndexPath {
+            tabletView.beginUpdates()
+            
+            DAO.players.removeAtIndex(indexPath.row)
+            
+            // Note that indexPath is wrapped in an array:  [indexPath]
+            tabletView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            
+            deletePlayerIndexPath = nil
+            
+            tabletView.endUpdates()
+        }
+    }
+    
+    func confirmDelete(player: Player) {
+        let alert = UIAlertController(title: "Delete Player", message: "Are you sure you want to permanently delete \(player.name)?", preferredStyle: .ActionSheet)
+        
+        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeletePlayer)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alert.addAction(DeleteAction)
+        alert.addAction(CancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 }

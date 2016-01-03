@@ -129,7 +129,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5WK-Od-HpZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9Ng-Tq-ARE"/>
-                            <constraint firstItem="5WK-Od-HpZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="CLZ-Lq-6dd"/>
+                            <constraint firstItem="5WK-Od-HpZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="CLZ-Lq-6dd"/>
                             <constraint firstItem="ffN-Q1-ziq" firstAttribute="top" secondItem="5WK-Od-HpZ" secondAttribute="bottom" constant="11" id="HCS-87-AMH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ohr-hA-gri" secondAttribute="bottom" constant="8" id="LSY-qJ-C4L"/>
                             <constraint firstItem="vdE-AL-kg6" firstAttribute="top" secondItem="5WK-Od-HpZ" secondAttribute="bottom" constant="11" id="OIw-00-4LG"/>
@@ -342,6 +342,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CZB-v6-yWj" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R38-lf-ch7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
