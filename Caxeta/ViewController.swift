@@ -22,10 +22,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         DAO.players.append(Player(name: "marcinha"))
     }
     
-    
-    @IBAction func startRound(sender: UIButton) {
-        
-        
+    @IBAction func newGame(sender: UIButton) {
+        DAO.newGame()
+        self.tabletView.reloadData()
     }
     
     @IBAction func addPlayer(sender: UIButton) {

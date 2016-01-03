@@ -12,7 +12,7 @@ public class DAO{
     static var players = [Player]()
     
     static func getPlayersWithPoints() -> [Player]{
-    
+        
         let playersWithPoints = players.filter { (p) -> Bool in
             p.points > 0
         }
@@ -28,10 +28,18 @@ public class DAO{
     }
     
     static func getPlayersWillPlay() -> [Player]{
-         let playPlayers = players.filter { (p) -> Bool in
+        let playPlayers = players.filter { (p) -> Bool in
             p.play && p.points > 0
         }
         return playPlayers
+    }
+    
+    static func newGame(){
+        _ = players.map { (p) -> Player in
+            p.points = 10
+            p.play = true
+            return p
+        }
     }
     
     static func calcRound(winner:Player){
