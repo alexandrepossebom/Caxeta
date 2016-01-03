@@ -53,6 +53,31 @@ public class DAO{
             p.play = true
             return p
         }
+        saveGame()
+    }
+    
+    static func loadGame(){
+        if let game = NSUserDefaults().arrayForKey("Players") as? [[String:AnyObject]] {
+            for item in game {
+                let name = item["name"]! as! String
+                let points = item["points"]! as! Int
+
+                DAO.players.append(Player(name: name, points: points))
+            }
+        }
+    }
+    
+    
+    static func saveGame(){
+        var save:[[String:AnyObject]] = []
+        
+        for p in players{
+            save.append(["name":p.name,"points":p.points])
+        }
+        
+        NSUserDefaults().setObject(save, forKey: "Players")
+        
+
     }
     
 }

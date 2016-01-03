@@ -17,9 +17,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DAO.players.append(Player(name: "jaça"))
-        DAO.players.append(Player(name: "xande"))
-        DAO.players.append(Player(name: "marcinha"))
+//        DAO.players.append(Player(name: "jaça"))
+//        DAO.players.append(Player(name: "xande"))
+//        DAO.players.append(Player(name: "marcinha"))
     }
     
     @IBAction func newGame(sender: UIButton) {

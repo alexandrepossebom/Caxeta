@@ -17,6 +17,11 @@ public class Player: CustomStringConvertible{
         self.name = name
     }
     
+    init(name:String, points:Int){
+        self.name = name
+        self.points = points
+    }
+    
     public var description: String {
         get{
             return "\(name) : \(points) : \(play)"
