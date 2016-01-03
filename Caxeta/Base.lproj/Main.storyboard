@@ -35,9 +35,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="111" y="11" width="18" height="20.5"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-sA-peS">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -51,9 +48,6 @@
                                                         <segment title="Play"/>
                                                         <segment title="Run"/>
                                                     </segments>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="140" y="8" width="81" height="29"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="changedPlayOrRun:" destination="LRI-Dx-RCQ" eventType="valueChanged" id="6O1-3q-ajc"/>
                                                     </connections>
@@ -99,13 +93,12 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonPlayOrRun" destination="kce-z1-PGm" id="NV4-9i-gr7"/>
                                             <outlet property="labelNome" destination="Ccs-sA-peS" id="hYU-oE-690"/>
+                                            <outlet property="labelPoints" destination="4dC-ky-5Fw" id="hCj-PH-zhM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="72" width="400" height="479"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="4aE-RI-LJ9"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="KFe-lo-hL3"/>
@@ -205,6 +198,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oEA-fv-UJa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OSm-24-7Yn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-lD-z2F">
@@ -215,6 +209,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbX-De-vn1" id="98M-zM-rRN">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="806-bt-7cm">
@@ -222,9 +217,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="4" y="11" width="46" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-0C-Llg">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -249,10 +241,10 @@
                                                     <exclude reference="cNB-0C-Llg"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="8lE-mF-hu7"/>
-                                                    <exclude reference="jOI-Cl-hPE"/>
                                                     <exclude reference="dC5-Bz-imV"/>
                                                     <exclude reference="iy8-5y-Gag"/>
+                                                    <exclude reference="8lE-mF-hu7"/>
+                                                    <exclude reference="jOI-Cl-hPE"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -261,10 +253,10 @@
                                                     <include reference="cNB-0C-Llg"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="8lE-mF-hu7"/>
-                                                    <include reference="jOI-Cl-hPE"/>
                                                     <include reference="dC5-Bz-imV"/>
                                                     <include reference="iy8-5y-Gag"/>
+                                                    <include reference="8lE-mF-hu7"/>
+                                                    <include reference="jOI-Cl-hPE"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -291,10 +283,10 @@
                                 <exclude reference="PgM-lD-z2F"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="3NY-GR-pAR"/>
                                 <exclude reference="Q83-wL-ejo"/>
                                 <exclude reference="dBf-d0-1G2"/>
                                 <exclude reference="ryB-pr-xpN"/>
-                                <exclude reference="3NY-GR-pAR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -302,10 +294,10 @@
                                 <include reference="PgM-lD-z2F"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="3NY-GR-pAR"/>
                                 <include reference="Q83-wL-ejo"/>
                                 <include reference="dBf-d0-1G2"/>
                                 <include reference="ryB-pr-xpN"/>
-                                <include reference="3NY-GR-pAR"/>
                             </mask>
                         </variation>
                     </view>

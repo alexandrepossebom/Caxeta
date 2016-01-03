@@ -10,12 +10,14 @@ import UIKit
     
 class GameTableViewCell: UITableViewCell {
     
-     var player:Player?
+    var player:Player?
+    var gameViewController:GameViewController?
 
     @IBOutlet weak var labelNome: UILabel!
     
     @IBAction func buttonWin(sender: UIButton) {
         DAO.calcRound(player!)
+        gameViewController?.navigationController?.popViewControllerAnimated(true)
     }
     
 }

@@ -11,8 +11,10 @@ import UIKit
 class PlayerTableViewCell: UITableViewCell {
     
     var player:Player?
-
+    
+    @IBOutlet weak var buttonPlayOrRun: UISegmentedControl!
     @IBOutlet weak var labelNome: UILabel!
+    @IBOutlet weak var labelPoints: UILabel!
     
     @IBAction func changedPlayOrRun(sender: UISegmentedControl) {
         

@@ -18,15 +18,15 @@ class GameViewController: UIViewController , UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayerGame", forIndexPath: indexPath) as! GameTableViewCell
         
-        cell.labelNome.text = DAO.playPlayers[indexPath.row].name
-        
-        cell.player = DAO.playPlayers[indexPath.row]
+        cell.gameViewController = self
+        cell.player = DAO.getPlayersWillPlay()[indexPath.row]
+        cell.labelNome.text = cell.player!.name
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DAO.playPlayers.count
+        return DAO.getPlayersWillPlay().count
     }
-
+    
 }

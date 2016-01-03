@@ -11,6 +11,15 @@ import Foundation
 public class DAO{
     static var players = [Player]()
     
+    static func getPlayersWithPoints() -> [Player]{
+    
+        let playersWithPoints = players.filter { (p) -> Bool in
+            p.points > 0
+        }
+        
+        return playersWithPoints
+    }
+    
     static func containsUser(name:String) -> Bool{
         let n = players.filter { (p) -> Bool in
             p.name == name
@@ -18,8 +27,11 @@ public class DAO{
         return n.count > 0
     }
     
-    static var playPlayers = players.filter { (p) -> Bool in
-        p.play
+    static func getPlayersWillPlay() -> [Player]{
+         let playPlayers = players.filter { (p) -> Bool in
+            p.play && p.points > 0
+        }
+        return playPlayers
     }
     
     static func calcRound(winner:Player){
@@ -27,6 +39,10 @@ public class DAO{
             if(p.play && p.name != winner.name){
                 p.points -= 2
             }
+            if(!p.play){
+                p.points -= 1
+            }
+            p.play = true
             return p
         }
     }
