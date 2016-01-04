@@ -15,6 +15,7 @@ public class DAO{
     var players = [Player]()
     var playersWithPoints:[Player]?
     var playersWillPlay:[Player]?
+    var round = 1
     
     func getPlayersWithPoints() -> [Player]{
         if(playersWithPoints == nil){
@@ -67,6 +68,7 @@ public class DAO{
             p.play = true
             return p
         }
+        round = 1
         invalidate()
     }
     
@@ -81,6 +83,7 @@ public class DAO{
             p.play = true
             return p
         }
+        round++
         invalidate()
         saveGame()
     }
@@ -95,6 +98,7 @@ public class DAO{
             }
         }
         
+        round = NSUserDefaults().integerForKey("round")
         invalidate()
     }
     
@@ -104,7 +108,7 @@ public class DAO{
         for p in players{
             save.append(["name":p.name,"points":p.points])
         }
-        
+        NSUserDefaults().setInteger(round, forKey: "round")
         NSUserDefaults().setObject(save, forKey: "Players")
     }
     

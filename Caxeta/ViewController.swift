@@ -53,8 +53,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func newGame(sender: UIButton) {
-        DAO.instance.newGame()
-        self.tabletView.reloadData()
+        let alert = UIAlertController(title: "New Game", message: "Are you sure to start a new Game?", preferredStyle: .ActionSheet)
+        
+        let YesAction = UIAlertAction(title: "Yes", style: .Destructive, handler: {
+            (action) -> Void in
+            DAO.instance.newGame()
+            self.tabletView.reloadData()
+        })
+        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alert.addAction(YesAction)
+        alert.addAction(CancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
