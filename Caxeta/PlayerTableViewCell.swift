@@ -20,14 +20,14 @@ class PlayerTableViewCell: UITableViewCell {
         
         let play = (sender.selectedSegmentIndex == 0)
         
-        _ = DAO.players.map { (p) -> Player in
+        _ = DAO.instance.players.map { (p) -> Player in
             if(p.name == player?.name){
                 p.play = play
             }
             return p
         }
         
-        print(DAO.players)
+        print(DAO.instance.players)
         
     }
 

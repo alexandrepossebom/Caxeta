@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func newGame(sender: UIButton) {
-        DAO.newGame()
+        DAO.instance.newGame()
         self.tabletView.reloadData()
     }
     
@@ -40,14 +40,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let textField = alert.textFields![0] as UITextField
             let name = textField.text!
             
-            if(!DAO.containsUser(name) && name.characters.count > 0){
-                DAO.players.append(Player(name: name))
-                DAO.saveGame()
-                
+            if(name.characters.count > 0){
+                DAO.instance.addPlayer(name)
                 
                 // Update Table Data
                 self.tabletView.beginUpdates()
-                self.tabletView.insertRowsAtIndexPaths([NSIndexPath(forRow: DAO.players.count-1, inSection: 0)], withRowAnimation: .Automatic)
+                self.tabletView.insertRowsAtIndexPaths([NSIndexPath(forRow: DAO.instance.getPlayersWithPoints().count-1, inSection: 0)], withRowAnimation: .Automatic)
                 self.tabletView.endUpdates()
             }
         }))
@@ -58,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayer", forIndexPath: indexPath) as! PlayerTableViewCell
         
-        cell.player = DAO.getPlayersWithPoints()[indexPath.row]
+        cell.player = DAO.instance.getPlayersWithPoints()[indexPath.row]
         
         cell.labelNome.text = cell.player!.name
         cell.labelPoints.text = "\(cell.player!.points)"
@@ -70,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DAO.getPlayersWithPoints().count
+        return DAO.instance.getPlayersWithPoints().count
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -80,7 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             deletePlayerIndexPath = indexPath
-            let playerToDelete = DAO.players[indexPath.row]
+            let playerToDelete = DAO.instance.getPlayersWithPoints()[indexPath.row]
             confirmDelete(playerToDelete)
         }
     }
@@ -89,7 +87,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let indexPath = deletePlayerIndexPath {
             tabletView.beginUpdates()
             
-            DAO.players.removeAtIndex(indexPath.row)
+            let playerToDelete = DAO.instance.getPlayersWithPoints()[indexPath.row]
+            
+            DAO.instance.delPlayer(playerToDelete)
             
             // Note that indexPath is wrapped in an array:  [indexPath]
             tabletView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

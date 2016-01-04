@@ -20,7 +20,7 @@ class GameTableViewCell: UITableViewCell {
         
         alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .Destructive, handler: { (action: UIAlertAction!) in
-            DAO.calcRound(self.player!)
+            DAO.instance.calcRound(self.player!)
             self.gameViewController?.navigationController?.popViewControllerAnimated(true)
         }))
         
