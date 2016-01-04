@@ -10,8 +10,11 @@
 "new game" = "New Game";
 "new game message" = "Are you sure to start a new Game?";
 "yes" = "Yes";
+"no" = "No";
 "cancel" = "Cancel";
 "delete" = "Delete";
 "delete player" = "Delete player";
 "delete player message" = "Are you sure to delete player %@ ?";
 "round" = "Round %d";
+"winner" = "Winner";
+"winner message" = "%@ is the winner?";

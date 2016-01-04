@@ -10,8 +10,11 @@
 "new game" = "Novo jogo";
 "new game message" = "Você tem certeza que deseja iniciar um novo jogo?";
 "yes" = "Sim";
+"no" = "Não";
 "cancel" = "Cancelar";
 "delete" = "Apagar";
 "delete player" = "Apagar jogador";
 "delete player message" = "Tem certeza que deseja apagar o jogador %@ ?";
 "round" = "Rodada %d";
+"winner" = "Vencedor";
+"winner message" = "%@ é o vencedor?";
