@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Caxeta
+
+  Created by Alexandre Possebom on 04/01/16.
+  Copyright © 2016 Alexandre Possebom. All rights reserved.
+*/
+"new player" = "New player";
+"input name" = "Player name:";
+"new game" = "New Game";
+"new game message" = "Are you sure to start a new Game?";
+"yes" = "Yes";
+"cancel" = "Cancel";
+"delete" = "Delete";
+"delete player" = "Delete player";
+"delete player message" = "Are you sure to delete player %@ ?";
+"round" = "Round %d";

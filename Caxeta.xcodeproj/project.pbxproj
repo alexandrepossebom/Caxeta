@@ -15,6 +15,7 @@
 		AC8372A31C316152007578DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8372A11C316152007578DA /* LaunchScreen.storyboard */; };
 		AC8372AB1C316D9F007578DA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */; };
 		AC8372AD1C317579007578DA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AC1C317579007578DA /* Player.swift */; };
+		ACB83C331C3AC96F00DB3603 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACB83C351C3AC96F00DB3603 /* Localizable.strings */; };
 		ACC1E62F1C35B521005B3DB1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */; };
 		ACC1E6311C35B899005B3DB1 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,10 @@
 		AC8372A41C316152007578DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		AC8372AC1C317579007578DA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		ACB83C2F1C3AC8E200DB3603 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		ACB83C301C3AC8E200DB3603 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		ACB83C341C3AC96F00DB3603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ACB83C381C3AC9CA00DB3603 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +80,7 @@
 				AC11464D1C354DB7002F6596 /* DAO.swift */,
 				ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */,
 				ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */,
+				ACB83C351C3AC96F00DB3603 /* Localizable.strings */,
 			);
 			path = Caxeta;
 			sourceTree = "<group>";
@@ -121,6 +127,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = AC83728C1C316152007578DA;
 			productRefGroup = AC8372961C316152007578DA /* Products */;
@@ -138,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8372A31C316152007578DA /* LaunchScreen.storyboard in Resources */,
+				ACB83C331C3AC96F00DB3603 /* Localizable.strings in Resources */,
 				AC8372A01C316152007578DA /* Assets.xcassets in Resources */,
 				AC83729E1C316152007578DA /* Main.storyboard in Resources */,
 			);
@@ -167,6 +175,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AC83729D1C316152007578DA /* Base */,
+				ACB83C2F1C3AC8E200DB3603 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -175,8 +184,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				AC8372A21C316152007578DA /* Base */,
+				ACB83C301C3AC8E200DB3603 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ACB83C351C3AC96F00DB3603 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACB83C341C3AC96F00DB3603 /* Base */,
+				ACB83C381C3AC9CA00DB3603 /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

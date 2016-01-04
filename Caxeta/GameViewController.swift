@@ -14,7 +14,8 @@ class GameViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Round \(DAO.instance.round)"
+        self.title = String.localizedStringWithFormat(NSLocalizedString("round",comment: "Round"), DAO.instance.round)
+        
         //For dont show separator for empty cells
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
     }

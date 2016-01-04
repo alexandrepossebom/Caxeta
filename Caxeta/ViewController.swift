@@ -26,7 +26,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func addPlayer(sender: UIButton) {
-        let alert = UIAlertController(title: "New user", message: "Input username:", preferredStyle: .Alert)
+        
+        let newPlayer = NSLocalizedString("new player", comment: "New player")
+        let enterPlayerName = NSLocalizedString("input name", comment: "Enter the player name")
+        
+        let alert = UIAlertController(title: newPlayer, message: enterPlayerName, preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
             textField.autocapitalizationType = .Words
@@ -53,14 +57,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func newGame(sender: UIButton) {
-        let alert = UIAlertController(title: "New Game", message: "Are you sure to start a new Game?", preferredStyle: .ActionSheet)
         
-        let YesAction = UIAlertAction(title: "Yes", style: .Destructive, handler: {
+        let newGame = NSLocalizedString("new game", comment: "New Game")
+        let newGameMessage = NSLocalizedString("new game message", comment: "Are you sure to start a new Game?")
+        
+        let yes = NSLocalizedString("yes", comment: "Yes")
+        let cancel = NSLocalizedString("cancel", comment: "Cancel")
+        
+        let alert = UIAlertController(title: newGame, message: newGameMessage, preferredStyle: .ActionSheet)
+        
+        let YesAction = UIAlertAction(title: yes, style: .Destructive, handler: {
             (action) -> Void in
             DAO.instance.newGame()
             self.tabletView.reloadData()
         })
-        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let CancelAction = UIAlertAction(title: cancel, style: .Cancel, handler: nil)
         
         alert.addAction(YesAction)
         alert.addAction(CancelAction)
@@ -116,10 +127,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func confirmDelete(player: Player) {
-        let alert = UIAlertController(title: "Delete Player", message: "Are you sure you want to permanently delete \(player.name)?", preferredStyle: .ActionSheet)
         
-        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeletePlayer)
-        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let deletePlayer = NSLocalizedString("delete player", comment: "Delete Player")
+        let deletePlayerMessage = String.localizedStringWithFormat(NSLocalizedString("delete player message",comment: "Delete Player Message"),player.name)
+        
+        let delete = NSLocalizedString("delete", comment: "Delete")
+        let cancel = NSLocalizedString("cancel", comment: "Cancel")
+        
+        let alert = UIAlertController(title: deletePlayer, message: deletePlayerMessage, preferredStyle: .ActionSheet)
+        
+        let DeleteAction = UIAlertAction(title: delete, style: .Destructive, handler: handleDeletePlayer)
+        let CancelAction = UIAlertAction(title: cancel, style: .Cancel, handler: nil)
         
         alert.addAction(DeleteAction)
         alert.addAction(CancelAction)

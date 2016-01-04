@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "10"; ObjectID = "4dC-ky-5Fw"; */
+"4dC-ky-5Fw.text" = "10";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "806-bt-7cm"; */
+"806-bt-7cm.text" = "Nome";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Ccs-sA-peS"; */
+"Ccs-sA-peS.text" = "Nome";
+
+/* Class = "UIButton"; normalTitle = "Start Round"; ObjectID = "Ohr-hA-gri"; Note = "Start Round"; */
+"Ohr-hA-gri.normalTitle" = "Iniciar rodada";
+
+/* Class = "UIButton"; normalTitle = "Winner"; ObjectID = "cNB-0C-Llg"; */
+"cNB-0C-Llg.normalTitle" = "Vencedor";
+
+/* Class = "UIButton"; normalTitle = "New Game"; ObjectID = "ffN-Q1-ziq"; Note = "New Game"; */
+"ffN-Q1-ziq.normalTitle" = "Novo jogo";
+
+/* Class = "UISegmentedControl"; kce-z1-PGm.segmentTitles[0] = "Play"; ObjectID = "kce-z1-PGm"; */
+"kce-z1-PGm.segmentTitles[0]" = "Jogar";
+
+/* Class = "UISegmentedControl"; kce-z1-PGm.segmentTitles[1] = "Run"; ObjectID = "kce-z1-PGm"; */
+"kce-z1-PGm.segmentTitles[1]" = "Correr";
