@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let alert = UIAlertController(title: "New user", message: "Input username:", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.text = ""
+            textField.autocapitalizationType = .Words
         }
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
