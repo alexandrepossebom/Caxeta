@@ -10,9 +10,12 @@ import UIKit
 
 class GameViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //For dont show separator for empty cells
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
     }
         
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

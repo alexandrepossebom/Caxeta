@@ -20,15 +20,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         
         self.title = "Caxeta"
-    }
-    
-    @IBAction func newGame(sender: UIButton) {
-        DAO.instance.newGame()
-        self.tabletView.reloadData()
+        
+        //For dont show separator for empty cells
+        self.tabletView.tableFooterView = UIView(frame: CGRectZero)
     }
     
     @IBAction func addPlayer(sender: UIButton) {
-        
         let alert = UIAlertController(title: "New user", message: "Input username:", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -45,12 +42,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 // Update Table Data
                 self.tabletView.beginUpdates()
-                self.tabletView.insertRowsAtIndexPaths([NSIndexPath(forRow: DAO.instance.getPlayersWithPoints().count-1, inSection: 0)], withRowAnimation: .Automatic)
+                let lastRow = DAO.instance.getPlayersWithPoints().count - 1
+                let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
+                self.tabletView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
                 self.tabletView.endUpdates()
             }
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func newGame(sender: UIButton) {
+        DAO.instance.newGame()
+        self.tabletView.reloadData()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
