@@ -99,6 +99,10 @@ public class DAO{
         }
         
         round = NSUserDefaults().integerForKey("round")
+        if round == 0{
+            round = 1
+        }
+        
         invalidate()
     }
     
