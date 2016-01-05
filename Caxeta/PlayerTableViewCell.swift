@@ -17,18 +17,13 @@ class PlayerTableViewCell: UITableViewCell {
     @IBOutlet weak var labelPoints: UILabel!
     
     @IBAction func changedPlayOrRun(sender: UISegmentedControl) {
-        
         let play = (sender.selectedSegmentIndex == 0)
-        
         _ = DAO.instance.players.map { (p) -> Player in
             if(p.name == player?.name){
                 p.play = play
             }
             return p
         }
-        
-        print(DAO.instance.players)
-        
     }
 
 }
