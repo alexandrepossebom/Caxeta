@@ -145,5 +145,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //Force recalculate play will play
+        DAO.instance.invalidate()
+    }
+    
 }
 
