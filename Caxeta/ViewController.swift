@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet weak var tabletView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     var deletePlayerIndexPath: NSIndexPath? = nil
     
@@ -41,16 +42,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let textField = alert.textFields![0] as UITextField
             let name = textField.text!
             
-            if(name.characters.count > 0){
-                DAO.instance.addPlayer(name)
-                
-                // Update Table Data
-                self.tabletView.beginUpdates()
-                let lastRow = DAO.instance.getPlayersWithPoints().count - 1
-                let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
-                self.tabletView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-                self.tabletView.endUpdates()
+            guard name.characters.count > 0 else {
+                return
             }
+            
+            DAO.instance.addPlayer(name)
+            
+            // Update Table Data
+            self.tabletView.beginUpdates()
+            let lastRow = DAO.instance.getPlayersWithPoints().count - 1
+            let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
+            self.tabletView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            self.tabletView.endUpdates()
+            
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -82,7 +86,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayer", forIndexPath: indexPath) as! PlayerTableViewCell
         
-        cell.player = DAO.instance.getPlayersWithPoints()[indexPath.row]
+        if tableView.editing{
+            cell.player = DAO.instance.players[indexPath.row]
+        }else{
+            cell.player = DAO.instance.getPlayersWithPoints()[indexPath.row]
+        }
         
         cell.labelNome.text = cell.player!.name
         cell.labelPoints.text = "\(cell.player!.points)"
@@ -94,7 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DAO.instance.getPlayersWithPoints().count
+        return tableView.editing ? DAO.instance.players.count: DAO.instance.getPlayersWithPoints().count
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -124,6 +132,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             tabletView.endUpdates()
         }
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    @IBAction func startEditing(sender: UIBarButtonItem) {
+        tabletView.setEditing(!self.tabletView.editing, animated: true)
+        
+        if(self.tabletView.editing){
+            editButton.title = NSLocalizedString("done", comment: "Edit Done")
+            editButton.style =  UIBarButtonItemStyle.Done;
+        }else{
+            editButton.style = UIBarButtonItemStyle.Plain;
+            editButton.title = NSLocalizedString("edit", comment: "Edit")
+        }
+        
+        self.tabletView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        let playerToMove = DAO.instance.players[fromIndexPath.row]
+        DAO.instance.players.removeAtIndex(fromIndexPath.row)
+        DAO.instance.players.insert(playerToMove, atIndex: toIndexPath.row)
     }
     
     func confirmDelete(player: Player) {

@@ -18,3 +18,5 @@
 "round" = "Rodada %d";
 "winner" = "Vencedor";
 "winner message" = "%@ é o vencedor?";
+"done" = "Feito";
+"edit" = "Editar";

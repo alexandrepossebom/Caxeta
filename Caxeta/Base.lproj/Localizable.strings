@@ -18,3 +18,5 @@
 "round" = "Round %d";
 "winner" = "Winner";
 "winner message" = "%@ is the winner?";
+"done" = "Done";
+"edit" = "Edit";

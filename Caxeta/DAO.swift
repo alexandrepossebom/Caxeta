@@ -80,6 +80,9 @@ public class DAO{
             if(!p.play){
                 p.points -= 1
             }
+            if p.points < 0 {
+                p.points = 0
+            }
             p.play = true
             return p
         }
