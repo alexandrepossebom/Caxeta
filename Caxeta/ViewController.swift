@@ -26,6 +26,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tabletView.tableFooterView = UIView(frame: CGRectZero)
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+        cell.preservesSuperviewLayoutMargins = false
+    }
+    
     @IBAction func addPlayer(sender: UIButton) {
         
         let newPlayer = NSLocalizedString("new player", comment: "New player")
