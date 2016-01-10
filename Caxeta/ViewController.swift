@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             // Update Table Data
             self.tabletView.beginUpdates()
-            let lastRow = DAO.instance.getPlayersWithPoints().count - 1
+            let lastRow = DAO.instance.players.count - 1
             let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
             self.tabletView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             self.tabletView.endUpdates()
@@ -86,23 +86,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayer", forIndexPath: indexPath) as! PlayerTableViewCell
         
-        if tableView.editing{
-            cell.player = DAO.instance.players[indexPath.row]
-        }else{
-            cell.player = DAO.instance.getPlayersWithPoints()[indexPath.row]
-        }
         
+        cell.player = DAO.instance.players[indexPath.row]
         cell.labelNome.text = cell.player!.name
         cell.labelPoints.text = "\(cell.player!.points)"
         
         cell.buttonPlayOrRun.selectedSegmentIndex = cell.player!.play ? 0 : 1
         cell.buttonPlayOrRun.setEnabled(cell.player!.points == 1 ? false : true, forSegmentAtIndex: 1)
         
+        
+        cell.buttonPlayOrRun.hidden = (cell.player!.points == 0)
+        
+        if cell.player!.points == 0 {
+            cell.contentView.backgroundColor = UIColor.lightGrayColor()
+        }else{
+            cell.contentView.backgroundColor = UIColor.clearColor()
+        }
+        
+        
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableView.editing ? DAO.instance.players.count: DAO.instance.getPlayersWithPoints().count
+        return DAO.instance.players.count
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -112,7 +118,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             deletePlayerIndexPath = indexPath
-            let playerToDelete = DAO.instance.getPlayersWithPoints()[indexPath.row]
+            let playerToDelete = DAO.instance.players[indexPath.row]
             confirmDelete(playerToDelete)
         }
     }
@@ -121,7 +127,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let indexPath = deletePlayerIndexPath {
             tabletView.beginUpdates()
             
-            let playerToDelete = DAO.instance.getPlayersWithPoints()[indexPath.row]
+            let playerToDelete = DAO.instance.players[indexPath.row]
             
             DAO.instance.delPlayer(playerToDelete)
             
@@ -148,8 +154,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             editButton.style = UIBarButtonItemStyle.Plain;
             editButton.title = NSLocalizedString("edit", comment: "Edit")
         }
-        
-        self.tabletView.reloadData()
     }
     
     func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {

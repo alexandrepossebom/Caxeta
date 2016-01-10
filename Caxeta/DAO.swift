@@ -17,15 +17,6 @@ public class DAO{
     var playersWillPlay:[Player]?
     var round = 1
     
-    func getPlayersWithPoints() -> [Player]{
-        if(playersWithPoints == nil){
-            playersWithPoints = players.filter { (p) -> Bool in
-                p.points > 0
-            }
-        }
-        return playersWithPoints!
-    }
-    
     func addPlayer(name:String){
         if(!containsUser(name)){
             players.append(Player(name:name))
