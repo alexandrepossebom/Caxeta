@@ -23,5 +23,5 @@
 /* Class = "UISegmentedControl"; kce-z1-PGm.segmentTitles[1] = "Correr"; ObjectID = "kce-z1-PGm"; */
 "kce-z1-PGm.segmentTitles[1]" = "Correr";
 
-/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "mOM-Hi-cJw"; */
+/* Class = "UIBarButtonItem"; title = "Editar"; ObjectID = "mOM-Hi-cJw"; */
 "mOM-Hi-cJw.title" = "Editar";

@@ -193,14 +193,10 @@
                                 <action selector="startEditing:" destination="BYZ-38-t0r" id="Poj-21-pio"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="tXR-VF-LqO">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="mgv-MH-vnf">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="addPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZeV-l4-xES"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JIc-XP-HWK">
+                            <connections>
+                                <action selector="addPlayer:" destination="BYZ-38-t0r" id="ba0-W2-bZv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

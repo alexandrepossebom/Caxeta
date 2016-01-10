@@ -142,8 +142,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tabletView.setEditing(!self.tabletView.editing, animated: true)
         
         if(self.tabletView.editing){
-            editButton.title = NSLocalizedString("done", comment: "Edit Done")
-            editButton.style =  UIBarButtonItemStyle.Done;
+            editButton.style = UIBarButtonItemStyle.Done;
+            editButton.title = NSLocalizedString("done", comment: "Done")
         }else{
             editButton.style = UIBarButtonItemStyle.Plain;
             editButton.title = NSLocalizedString("edit", comment: "Edit")
