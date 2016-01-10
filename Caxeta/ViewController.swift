@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.title = "Caxeta"
         
         //For dont show separator for empty cells
-        self.tabletView.tableFooterView = UIView(frame: CGRectZero)
+        self.tabletView.tableFooterView = UIView()
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

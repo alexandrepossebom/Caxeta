@@ -17,7 +17,7 @@ class GameViewController: UIViewController , UITableViewDataSource, UITableViewD
         self.title = String.localizedStringWithFormat(NSLocalizedString("round",comment: "Round"), DAO.instance.round)
         
         //For dont show separator for empty cells
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.tableFooterView = UIView()
     }
         
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
