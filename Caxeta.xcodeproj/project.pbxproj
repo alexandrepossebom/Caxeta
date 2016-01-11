@@ -16,6 +16,7 @@
 		AC8372AB1C316D9F007578DA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AA1C316D9F007578DA /* PlayerTableViewCell.swift */; };
 		AC8372AD1C317579007578DA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372AC1C317579007578DA /* Player.swift */; };
 		ACB83C331C3AC96F00DB3603 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACB83C351C3AC96F00DB3603 /* Localizable.strings */; };
+		ACC0C63C1C43B456007E0138 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC0C63B1C43B456007E0138 /* UIScrollView+EmptyDataSet.m */; };
 		ACC1E62F1C35B521005B3DB1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */; };
 		ACC1E6311C35B899005B3DB1 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,9 @@
 		ACB83C341C3AC96F00DB3603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ACB83C381C3AC9CA00DB3603 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		ACC0C6381C42EE3A007E0138 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		ACC0C6391C43B455007E0138 /* Caxeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Caxeta-Bridging-Header.h"; sourceTree = "<group>"; };
+		ACC0C63A1C43B456007E0138 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		ACC0C63B1C43B456007E0138 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,8 @@
 		AC8372971C316152007578DA /* Caxeta */ = {
 			isa = PBXGroup;
 			children = (
+				ACC0C63A1C43B456007E0138 /* UIScrollView+EmptyDataSet.h */,
+				ACC0C63B1C43B456007E0138 /* UIScrollView+EmptyDataSet.m */,
 				AC8372981C316152007578DA /* AppDelegate.swift */,
 				AC83729A1C316152007578DA /* ViewController.swift */,
 				AC83729C1C316152007578DA /* Main.storyboard */,
@@ -81,6 +87,7 @@
 				ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */,
 				ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */,
 				ACB83C351C3AC96F00DB3603 /* Localizable.strings */,
+				ACC0C6391C43B455007E0138 /* Caxeta-Bridging-Header.h */,
 			);
 			path = Caxeta;
 			sourceTree = "<group>";
@@ -165,6 +172,7 @@
 				AC83729B1C316152007578DA /* ViewController.swift in Sources */,
 				AC8372991C316152007578DA /* AppDelegate.swift in Sources */,
 				ACC1E62F1C35B521005B3DB1 /* GameViewController.swift in Sources */,
+				ACC0C63C1C43B456007E0138 /* UIScrollView+EmptyDataSet.m in Sources */,
 				AC11464E1C354DB7002F6596 /* DAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Caxeta/Info.plist;
@@ -294,6 +303,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Caxeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Caxeta/Caxeta-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -301,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Caxeta/Info.plist;
@@ -308,6 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Caxeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Caxeta/Caxeta-Bridging-Header.h";
 			};
 			name = Release;
 		};
