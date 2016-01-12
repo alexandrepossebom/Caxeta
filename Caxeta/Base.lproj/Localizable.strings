@@ -20,3 +20,7 @@
 "winner message" = "%@ is the winner?";
 "done" = "Done";
 "edit" = "Edit";
+"no players" = "No Players";
+"add some players" = "Add some players!";
+"more players" = "More Players";
+"more players needed" = "You need more players to start a round";

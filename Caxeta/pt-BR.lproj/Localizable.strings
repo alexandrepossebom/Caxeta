@@ -20,3 +20,7 @@
 "winner message" = "%@ é o vencedor?";
 "done" = "Feito";
 "edit" = "Editar";
+"no players" = "Sem jogadores";
+"add some players" = "Adicione alguns jogadores!";
+"more players" = "Mais jogadores";
+"more players needed" = "Você precisa adicionar mais jogadores para esta rodada";
