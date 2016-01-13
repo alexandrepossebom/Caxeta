@@ -36,7 +36,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="111" y="12" width="18" height="20.5"/>
+                                                        <rect key="frame" x="151" y="12" width="18" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-sA-peS">
@@ -52,7 +52,7 @@
                                                         <segment title="Run"/>
                                                     </segments>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="140" y="8" width="81" height="29"/>
+                                                        <rect key="frame" x="220" y="8" width="81" height="29"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="changedPlayOrRun:" destination="LRI-Dx-RCQ" eventType="valueChanged" id="6O1-3q-ajc"/>
@@ -105,6 +105,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="621"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="4aE-RI-LJ9"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="KFe-lo-hL3"/>
@@ -116,11 +119,14 @@
                                 <attributedString key="userComments">
                                     <fragment content="Start Round">
                                         <attributes>
-                                            <font key="NSFont" metaFont="controlContent" size="11"/>
+                                            <font key="NSFont" metaFont="smallSystem"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="281" y="629" width="82" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="8LY-iW-vGQ" kind="show" id="Lr7-c2-Zm3"/>
                                 </connections>
@@ -131,11 +137,14 @@
                                 <attributedString key="userComments">
                                     <fragment content="New Game">
                                         <attributes>
-                                            <font key="NSFont" metaFont="controlContent" size="11"/>
+                                            <font key="NSFont" metaFont="smallSystem"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="12" y="629" width="75" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDj-Ad-9m5"/>
                                 </connections>
@@ -187,6 +196,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="G1b-ej-6my">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="mOM-Hi-cJw">
                             <connections>
@@ -199,7 +209,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="editButton" destination="mOM-Hi-cJw" id="F5x-dK-DIA"/>
                         <outlet property="tabletView" destination="5WK-Od-HpZ" id="Q7z-Y9-cgB"/>
@@ -242,7 +252,7 @@
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <state key="normal" title="Winner"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="176" y="7" width="49" height="30"/>
+                                                        <rect key="frame" x="272" y="7" width="49" height="30"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="buttonWin:" destination="fbX-De-vn1" eventType="touchUpInside" id="2jN-Lv-GxW"/>
@@ -297,6 +307,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="8LY-iW-vGQ" id="kJb-GY-hiA"/>
                                     <outlet property="delegate" destination="8LY-iW-vGQ" id="il1-Mt-Zf0"/>
@@ -305,20 +318,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oEA-fv-UJa" firstAttribute="top" secondItem="PgM-lD-z2F" secondAttribute="bottom" id="3NY-GR-pAR"/>
-                            <constraint firstItem="PgM-lD-z2F" firstAttribute="leading" secondItem="OSm-24-7Yn" secondAttribute="leadingMargin" constant="-20" id="Q83-wL-ejo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PgM-lD-z2F" secondAttribute="trailing" constant="-20" id="dBf-d0-1G2"/>
-                            <constraint firstItem="PgM-lD-z2F" firstAttribute="top" secondItem="lES-YF-Djg" secondAttribute="bottom" id="ryB-pr-xpN"/>
+                            <constraint firstItem="PgM-lD-z2F" firstAttribute="leading" secondItem="OSm-24-7Yn" secondAttribute="leadingMargin" constant="-28" id="17g-3R-Hxl"/>
+                            <constraint firstAttribute="trailing" secondItem="PgM-lD-z2F" secondAttribute="trailing" id="6Yh-3a-o0J"/>
+                            <constraint firstItem="PgM-lD-z2F" firstAttribute="top" secondItem="OSm-24-7Yn" secondAttribute="top" id="E5E-g0-OhC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PgM-lD-z2F" secondAttribute="trailing" constant="-28" id="EuA-JH-ISH"/>
+                            <constraint firstItem="oEA-fv-UJa" firstAttribute="top" secondItem="PgM-lD-z2F" secondAttribute="bottom" id="Qzv-ny-SGu"/>
+                            <constraint firstItem="PgM-lD-z2F" firstAttribute="leading" secondItem="OSm-24-7Yn" secondAttribute="leading" id="YWR-5z-AVj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="PgM-lD-z2F"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="3NY-GR-pAR"/>
-                                <exclude reference="Q83-wL-ejo"/>
-                                <exclude reference="dBf-d0-1G2"/>
-                                <exclude reference="ryB-pr-xpN"/>
+                                <exclude reference="17g-3R-Hxl"/>
+                                <exclude reference="6Yh-3a-o0J"/>
+                                <exclude reference="E5E-g0-OhC"/>
+                                <exclude reference="EuA-JH-ISH"/>
+                                <exclude reference="YWR-5z-AVj"/>
+                                <exclude reference="Qzv-ny-SGu"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -326,33 +343,39 @@
                                 <include reference="PgM-lD-z2F"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="3NY-GR-pAR"/>
-                                <include reference="Q83-wL-ejo"/>
-                                <include reference="dBf-d0-1G2"/>
-                                <include reference="ryB-pr-xpN"/>
+                                <exclude reference="17g-3R-Hxl"/>
+                                <include reference="6Yh-3a-o0J"/>
+                                <include reference="E5E-g0-OhC"/>
+                                <exclude reference="EuA-JH-ISH"/>
+                                <include reference="YWR-5z-AVj"/>
+                                <include reference="Qzv-ny-SGu"/>
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="PgM-lD-z2F" id="lqL-XD-Ff7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlY-ws-LiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918.5" y="339"/>
+            <point key="canvasLocation" x="1917.75" y="338.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PCx-BM-N3j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CZB-v6-yWj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R38-lf-ch7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DGh-An-pRn">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="39a-pC-K0W"/>
                     </connections>
