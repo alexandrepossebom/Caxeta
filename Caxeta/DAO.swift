@@ -5,24 +5,25 @@
 //  Created by Alexandre Possebom on 31/12/15.
 //  Copyright © 2015 Alexandre Possebom. All rights reserved.
 //
-
 import Foundation
 
 public class DAO {
 	
 	static let instance = DAO()
 	
-	var players = [Player]()
+    var round   = 1
+    var players = [Player]()
 	var playersWithPoints: [Player]?
 	var playersWillPlay: [Player]?
-	var round = 1
 	
-	func addPlayer(name: String) {
-		if (!containsUser(name)) {
-			players.append(Player(name: name))
-			invalidate()
-			saveGame()
+	func addPlayer(name: String) -> Bool {
+		if (containsUser(name)) {
+			return false
 		}
+		players.append(Player(name: name))
+		invalidate()
+		saveGame()
+		return true
 	}
 	
 	func delPlayer(player: Player) {
