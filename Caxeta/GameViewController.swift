@@ -19,8 +19,24 @@ class GameViewController: UIViewController, UITableViewDataSource, UITableViewDe
 		tableView.emptyDataSetSource = self
 		tableView.emptyDataSetDelegate = self
 		
+		
 		// For dont show separator for empty cells
 		self.tableView.tableFooterView = UIView()
+		
+		self.automaticallyAdjustsScrollViewInsets = false
+	}
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+        cell.preservesSuperviewLayoutMargins = false
+    }
+	
+	override func viewWillAppear(animated: Bool) {
+		if let rect = self.navigationController?.navigationBar.frame {
+			let y = rect.size.height + rect.origin.y
+			self.tableView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0)
+		}
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
