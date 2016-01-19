@@ -8,14 +8,14 @@
 import Foundation
 
 public class DAO {
-	
+
 	static let instance = DAO()
-	
+
 	var round = 1
 	var players = [Player]()
 	var playersWithPoints: [Player]?
 	var playersWillPlay: [Player]?
-	
+
 	func addPlayer(name: String) -> Bool {
 		if containsUser(name) {
 			return false
@@ -25,7 +25,7 @@ public class DAO {
 		saveGame()
 		return true
 	}
-	
+
 	func delPlayer(player: Player) {
         let name = player.name
 		players = players.filter {(player) -> Bool in
@@ -34,19 +34,19 @@ public class DAO {
 		invalidate()
 		saveGame()
 	}
-	
+
 	internal func invalidate() {
 		playersWithPoints = nil
 		playersWillPlay = nil
 	}
-	
+
 	internal func containsUser(name: String) -> Bool {
 		let n = players.filter {(player) -> Bool in
 			player.name == name
 		}
 		return n.count > 0
 	}
-	
+
 	func getPlayersWillPlay() -> [Player] {
 		if playersWillPlay == nil {
 			playersWillPlay = players.filter {(player) -> Bool in
@@ -55,7 +55,7 @@ public class DAO {
 		}
 		return playersWillPlay!
 	}
-	
+
 	func newGame() {
 		_ = players.map {(player) -> Player in
 			player.points = 10
@@ -65,7 +65,7 @@ public class DAO {
 		round = 1
 		invalidate()
 	}
-	
+
 	func calcRound(winner: Player) {
 		_ = players.map {(player) -> Player in
 			if player.play && player.name != winner.name {
@@ -80,39 +80,39 @@ public class DAO {
 		invalidate()
 		saveGame()
 	}
-	
+
 	func loadGame() {
 		if let game = NSUserDefaults().arrayForKey("Players") as? [[String: AnyObject]] {
 			for item in game {
-                
+
                 guard let name = item["name"]! as? String else {
                     return
                 }
-                
+
                 guard let points = item["points"]! as? Int else {
                     return
                 }
-			
+
 				players.append(Player(name: name, points: points))
 			}
 		}
-		
+
 		round = NSUserDefaults().integerForKey("round")
 		if round == 0 {
 			round = 1
 		}
-		
+
 		invalidate()
 	}
-	
+
 	func saveGame() {
 		var save: [[String: AnyObject]] = []
-		
+
 		for p in players {
 			save.append(["name": p.name, "points": p.points])
 		}
 		NSUserDefaults().setInteger(round, forKey: "round")
 		NSUserDefaults().setObject(save, forKey: "Players")
 	}
-	
+
 }

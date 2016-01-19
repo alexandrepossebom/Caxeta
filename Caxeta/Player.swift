@@ -11,7 +11,7 @@ import Foundation
 public class Player: CustomStringConvertible {
 	var name: String
     var play: Bool = true
-    
+
 	var points: Int = 10 {
         didSet {
             if points == 1 {
@@ -22,20 +22,20 @@ public class Player: CustomStringConvertible {
             }
         }
 	}
-	
+
 	init(name: String) {
 		self.name = name
 	}
-	
+
 	init(name: String, points: Int) {
 		self.name = name
 		self.points = points
 	}
-	
+
 	public var description: String {
 		get {
 			return "\(name) : \(points) : \(play)"
 		}
 	}
-	
+
 }
