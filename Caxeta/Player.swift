@@ -10,8 +10,18 @@ import Foundation
 
 public class Player: CustomStringConvertible {
 	var name: String
-	var points: Int = 10
-	var play: Bool = true
+    var play: Bool = true
+    
+	var points: Int = 10 {
+        didSet {
+            if points == 1 {
+                play = true
+            } else if points < 1 {
+                points = 0
+                play = false
+            }
+        }
+	}
 	
 	init(name: String) {
 		self.name = name

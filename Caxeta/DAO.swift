@@ -11,8 +11,8 @@ public class DAO {
 	
 	static let instance = DAO()
 	
-    var round   = 1
-    var players = [Player]()
+	var round = 1
+	var players = [Player]()
 	var playersWithPoints: [Player]?
 	var playersWillPlay: [Player]?
 	
@@ -67,14 +67,10 @@ public class DAO {
 	
 	func calcRound(winner: Player) {
 		_ = players.map {(p) -> Player in
-			if (p.play && p.name != winner.name) {
+			if p.play && p.name != winner.name {
 				p.points -= 2
-			}
-			if (!p.play) {
+			} else if !p.play {
 				p.points -= 1
-			}
-			if p.points < 0 {
-				p.points = 0
 			}
 			p.play = true
 			return p
