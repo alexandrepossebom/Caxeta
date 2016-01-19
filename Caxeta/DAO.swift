@@ -84,9 +84,15 @@ public class DAO {
 	func loadGame() {
 		if let game = NSUserDefaults().arrayForKey("Players") as? [[String: AnyObject]] {
 			for item in game {
-				let name = item["name"]! as! String
-				let points = item["points"]! as! Int
-				
+                
+                guard let name = item["name"]! as? String else {
+                    return
+                }
+                
+                guard let points = item["points"]! as? Int else {
+                    return
+                }
+			
 				players.append(Player(name: name, points: points))
 			}
 		}
