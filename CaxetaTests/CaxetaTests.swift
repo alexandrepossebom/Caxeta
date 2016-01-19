@@ -45,7 +45,7 @@ class CaxetaTests: XCTestCase {
 		
 		print(DAO.instance.players)
 		
-		while (DAO.instance.getPlayersWillPlay().count > 1) {
+		while DAO.instance.getPlayersWillPlay().count > 1 {
 			// This for always 1 player run
             var i = arc4random_uniform(UInt32(DAO.instance.players.count))
 			DAO.instance.players[Int(i)].play = false
@@ -68,7 +68,7 @@ class CaxetaTests: XCTestCase {
 		let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".characters
 		let lettersLength = UInt32(letters.count)
 		
-		let randomCharacters = (0..<length).map {i -> String in
+		let randomCharacters = (0..<length).map { _ -> String in
 			let offset = Int(arc4random_uniform(lettersLength))
 			let c = letters[letters.startIndex.advancedBy(offset)]
 			return String(c)

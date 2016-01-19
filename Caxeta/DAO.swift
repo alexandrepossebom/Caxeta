@@ -17,7 +17,7 @@ public class DAO {
 	var playersWillPlay: [Player]?
 	
 	func addPlayer(name: String) -> Bool {
-		if (containsUser(name)) {
+		if containsUser(name) {
 			return false
 		}
 		players.append(Player(name: name))
@@ -27,8 +27,9 @@ public class DAO {
 	}
 	
 	func delPlayer(player: Player) {
-		players = players.filter {(p) -> Bool in
-			p.name != player.name
+        let name = player.name
+		players = players.filter {(player) -> Bool in
+			player.name != name
 		}
 		invalidate()
 		saveGame()
@@ -40,40 +41,40 @@ public class DAO {
 	}
 	
 	internal func containsUser(name: String) -> Bool {
-		let n = players.filter {(p) -> Bool in
-			p.name == name
+		let n = players.filter {(player) -> Bool in
+			player.name == name
 		}
 		return n.count > 0
 	}
 	
 	func getPlayersWillPlay() -> [Player] {
-		if (playersWillPlay == nil) {
-			playersWillPlay = players.filter {(p) -> Bool in
-				p.play && p.points > 0
+		if playersWillPlay == nil {
+			playersWillPlay = players.filter {(player) -> Bool in
+				player.play && player.points > 0
 			}
 		}
 		return playersWillPlay!
 	}
 	
 	func newGame() {
-		_ = players.map {(p) -> Player in
-			p.points = 10
-			p.play = true
-			return p
+		_ = players.map {(player) -> Player in
+			player.points = 10
+			player.play = true
+			return player
 		}
 		round = 1
 		invalidate()
 	}
 	
 	func calcRound(winner: Player) {
-		_ = players.map {(p) -> Player in
-			if p.play && p.name != winner.name {
-				p.points -= 2
-			} else if !p.play {
-				p.points -= 1
+		_ = players.map {(player) -> Player in
+			if player.play && player.name != winner.name {
+				player.points -= 2
+			} else if !player.play {
+				player.points -= 1
 			}
-			p.play = true
-			return p
+			player.play = true
+			return player
 		}
 		round++
 		invalidate()

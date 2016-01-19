@@ -18,11 +18,11 @@ class PlayerTableViewCell: UITableViewCell {
 	
 	@IBAction func changedPlayOrRun(sender: UISegmentedControl) {
 		let play = (sender.selectedSegmentIndex == 0)
-		_ = DAO.instance.players.map {(p) -> Player in
-			if (p.name == player?.name) {
-				p.play = play
+		_ = DAO.instance.players.map {(player) -> Player in
+			if player.name == self.player?.name {
+				player.play = play
 			}
-			return p
+			return player
 		}
 	}
 	
