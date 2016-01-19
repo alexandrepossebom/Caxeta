@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 return
             }
             
-            if(DAO.instance.addPlayer(name)){
+            if DAO.instance.addPlayer(name) {
                 // Update Table Data
                 self.tabletView.beginUpdates()
                 let lastRow = DAO.instance.players.count - 1
@@ -207,4 +207,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
 }
-

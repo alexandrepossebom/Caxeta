@@ -10,8 +10,8 @@ import UIKit
 
 class GameTableViewCell: UITableViewCell {
     
-    var player:Player?
-    var gameViewController:GameViewController?
+    var player: Player?
+    var gameViewController: GameViewController?
     
     @IBOutlet weak var labelNome: UILabel!
     
