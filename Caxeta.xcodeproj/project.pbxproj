@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC11464E1C354DB7002F6596 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11464D1C354DB7002F6596 /* DAO.swift */; };
+		AC538D4C1C4974C300373095 /* CaxetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC538D4B1C4974C300373095 /* CaxetaTests.swift */; };
 		AC8372991C316152007578DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372981C316152007578DA /* AppDelegate.swift */; };
 		AC83729B1C316152007578DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83729A1C316152007578DA /* ViewController.swift */; };
 		AC83729E1C316152007578DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC83729C1C316152007578DA /* Main.storyboard */; };
@@ -21,8 +22,21 @@
 		ACC1E6311C35B899005B3DB1 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AC538D4E1C4974C300373095 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC83728D1C316152007578DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC8372941C316152007578DA;
+			remoteInfo = Caxeta;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AC11464D1C354DB7002F6596 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		AC538D491C4974C300373095 /* CaxetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaxetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC538D4B1C4974C300373095 /* CaxetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaxetaTests.swift; sourceTree = "<group>"; };
+		AC538D4D1C4974C300373095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC8372951C316152007578DA /* Caxeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caxeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8372981C316152007578DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC83729A1C316152007578DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +58,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AC538D461C4974C300373095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC8372921C316152007578DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -54,10 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC538D4A1C4974C300373095 /* CaxetaTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC538D4B1C4974C300373095 /* CaxetaTests.swift */,
+				AC538D4D1C4974C300373095 /* Info.plist */,
+			);
+			path = CaxetaTests;
+			sourceTree = "<group>";
+		};
 		AC83728C1C316152007578DA = {
 			isa = PBXGroup;
 			children = (
 				AC8372971C316152007578DA /* Caxeta */,
+				AC538D4A1C4974C300373095 /* CaxetaTests */,
 				AC8372961C316152007578DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				AC8372951C316152007578DA /* Caxeta.app */,
+				AC538D491C4974C300373095 /* CaxetaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +127,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AC538D481C4974C300373095 /* CaxetaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC538D521C4974C300373095 /* Build configuration list for PBXNativeTarget "CaxetaTests" */;
+			buildPhases = (
+				AC538D451C4974C300373095 /* Sources */,
+				AC538D461C4974C300373095 /* Frameworks */,
+				AC538D471C4974C300373095 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC538D4F1C4974C300373095 /* PBXTargetDependency */,
+			);
+			name = CaxetaTests;
+			productName = CaxetaTests;
+			productReference = AC538D491C4974C300373095 /* CaxetaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AC8372941C316152007578DA /* Caxeta */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC8372A71C316152007578DA /* Build configuration list for PBXNativeTarget "Caxeta" */;
@@ -122,6 +172,11 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Alexandre Possebom";
 				TargetAttributes = {
+					AC538D481C4974C300373095 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 768CJJBSVP;
+						TestTargetID = AC8372941C316152007578DA;
+					};
 					AC8372941C316152007578DA = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 768CJJBSVP;
@@ -143,11 +198,19 @@
 			projectRoot = "";
 			targets = (
 				AC8372941C316152007578DA /* Caxeta */,
+				AC538D481C4974C300373095 /* CaxetaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AC538D471C4974C300373095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC8372931C316152007578DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +225,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AC538D451C4974C300373095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC538D4C1C4974C300373095 /* CaxetaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC8372911C316152007578DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +249,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC538D4F1C4974C300373095 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC8372941C316152007578DA /* Caxeta */;
+			targetProxy = AC538D4E1C4974C300373095 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AC83729C1C316152007578DA /* Main.storyboard */ = {
@@ -210,6 +289,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AC538D501C4974C300373095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CaxetaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.CaxetaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caxeta.app/Caxeta";
+			};
+			name = Debug;
+		};
+		AC538D511C4974C300373095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CaxetaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.CaxetaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caxeta.app/Caxeta";
+			};
+			name = Release;
+		};
 		AC8372A51C316152007578DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -298,6 +401,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Caxeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Caxeta;
@@ -327,6 +431,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AC538D521C4974C300373095 /* Build configuration list for PBXNativeTarget "CaxetaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC538D501C4974C300373095 /* Debug */,
+				AC538D511C4974C300373095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AC8372901C316152007578DA /* Build configuration list for PBXProject "Caxeta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
