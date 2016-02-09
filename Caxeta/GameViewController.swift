@@ -8,9 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
-
-	@IBOutlet weak var tableView: UITableView!
+class GameViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -19,27 +17,17 @@ class GameViewController: UIViewController, UITableViewDataSource, UITableViewDe
 		tableView.emptyDataSetSource = self
 		tableView.emptyDataSetDelegate = self
 
-
 		// For dont show separator for empty cells
 		self.tableView.tableFooterView = UIView()
-
-		self.automaticallyAdjustsScrollViewInsets = false
 	}
 
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
         cell.preservesSuperviewLayoutMargins = false
     }
 
-	override func viewWillAppear(animated: Bool) {
-		if let rect = self.navigationController?.navigationBar.frame {
-			let y = rect.size.height + rect.origin.y
-			self.tableView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0)
-		}
-	}
-
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
 		let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayerGame", forIndexPath: indexPath) as! GameTableViewCell
 
@@ -50,7 +38,7 @@ class GameViewController: UIViewController, UITableViewDataSource, UITableViewDe
 		return cell
 	}
 
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return DAO.instance.getPlayersWillPlay().count
 	}
 
