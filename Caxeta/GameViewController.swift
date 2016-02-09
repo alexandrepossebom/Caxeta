@@ -58,5 +58,9 @@ class GameViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmpty
 		return UIImage(named: "AppIcon60x60")
 	}
 
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+       return false
+    }
+
 
 }

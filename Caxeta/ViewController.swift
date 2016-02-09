@@ -205,6 +205,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return UIImage(named: "AppIcon60x60")
     }
 
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+
 
 
 }
