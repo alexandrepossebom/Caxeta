@@ -42,19 +42,19 @@ class GameViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmpty
 		return DAO.instance.getPlayersWillPlay().count
 	}
 
-	func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+	func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
 		let str = NSLocalizedString("more players", comment: "More Players")
 		let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
 		return NSAttributedString(string: str, attributes: attrs)
 	}
 
-	func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+	func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
 		let str = NSLocalizedString("more players needed", comment: "More players needed")
 		let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
 		return NSAttributedString(string: str, attributes: attrs)
 	}
 
-	func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+	func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
 		return UIImage(named: "AppIcon60x60")
 	}
 
