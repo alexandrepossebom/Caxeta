@@ -15,7 +15,7 @@ class GameTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelNome: UILabel!
 
-    @IBAction func buttonWin(sender: UIButton) {
+    @IBAction func buttonWin(_ sender: UIButton) {
 
         let winner = NSLocalizedString("winner", comment: "Winner")
         let winnerMessage = String.localizedStringWithFormat(NSLocalizedString("winner message", comment: "Winner"), player!.name)
@@ -23,15 +23,15 @@ class GameTableViewCell: UITableViewCell {
         let yes = NSLocalizedString("yes", comment: "Yes")
         let no = NSLocalizedString("no", comment: "No")
 
-        let alert = UIAlertController(title: winner, message: winnerMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: winner, message: winnerMessage, preferredStyle: UIAlertControllerStyle.alert)
 
-        alert.addAction(UIAlertAction(title: no, style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: yes, style: .Destructive, handler: { (action: UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: no, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: yes, style: .destructive, handler: { (action: UIAlertAction!) in
             DAO.instance.calcRound(self.player!)
-            self.gameViewController?.navigationController?.popViewControllerAnimated(true)
+            self.gameViewController?.navigationController?.popViewController(animated: true)
         }))
 
-        gameViewController?.presentViewController(alert, animated: true, completion: nil)
+        gameViewController?.present(alert, animated: true, completion: nil)
     }
 
 }

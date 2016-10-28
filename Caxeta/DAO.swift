@@ -7,7 +7,7 @@
 //
 import Foundation
 
-public class DAO {
+open class DAO {
 
 	static let instance = DAO()
 
@@ -16,7 +16,7 @@ public class DAO {
 	var playersWithPoints: [Player]?
 	var playersWillPlay: [Player]?
 
-	func addPlayer(name: String) -> Bool {
+	func addPlayer(_ name: String) -> Bool {
 		if containsUser(name) {
 			return false
 		}
@@ -26,7 +26,7 @@ public class DAO {
 		return true
 	}
 
-	func delPlayer(player: Player) {
+	func delPlayer(_ player: Player) {
         let name = player.name
 		players = players.filter {(player) -> Bool in
 			player.name != name
@@ -40,7 +40,7 @@ public class DAO {
 		playersWillPlay = nil
 	}
 
-	internal func containsUser(name: String) -> Bool {
+	internal func containsUser(_ name: String) -> Bool {
 		let n = players.filter {(player) -> Bool in
 			player.name == name
 		}
@@ -66,7 +66,7 @@ public class DAO {
 		invalidate()
 	}
 
-	func calcRound(winner: Player) {
+	func calcRound(_ winner: Player) {
 		_ = players.map {(player) -> Player in
 			if player.play && player.name != winner.name {
 				player.points -= 2
@@ -76,13 +76,13 @@ public class DAO {
 			player.play = true
 			return player
 		}
-		round++
+		round += 1
 		invalidate()
 		saveGame()
 	}
 
 	func loadGame() {
-		if let game = NSUserDefaults().arrayForKey("Players") as? [[String: AnyObject]] {
+		if let game = UserDefaults().array(forKey: "Players") as? [[String: AnyObject]] {
 			for item in game {
 
                 guard let name = item["name"]! as? String else {
@@ -97,7 +97,7 @@ public class DAO {
 			}
 		}
 
-		round = NSUserDefaults().integerForKey("round")
+		round = UserDefaults().integer(forKey: "round")
 		if round == 0 {
 			round = 1
 		}
@@ -109,10 +109,10 @@ public class DAO {
 		var save: [[String: AnyObject]] = []
 
 		for p in players {
-			save.append(["name": p.name, "points": p.points])
+			save.append(["name": p.name as AnyObject, "points": p.points as AnyObject])
 		}
-		NSUserDefaults().setInteger(round, forKey: "round")
-		NSUserDefaults().setObject(save, forKey: "Players")
+		UserDefaults().set(round, forKey: "round")
+		UserDefaults().set(save, forKey: "Players")
 	}
 
 }

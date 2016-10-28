@@ -15,38 +15,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tabletView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
 
-    var deletePlayerIndexPath: NSIndexPath? = nil
+    var deletePlayerIndexPath: IndexPath? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftBarButtonItem = editButtonItem()
+        navigationItem.leftBarButtonItem = editButtonItem
 
         tabletView.emptyDataSetSource = self
         tabletView.emptyDataSetDelegate = self
 
+//        self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
         // For dont show separator for empty cells
         self.tabletView.tableFooterView = UIView()
     }
 
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
     }
-
-    @IBAction func addPlayer(sender: UIButton) {
+    
+    @IBAction func addPlayer(_ sender: UIButton) {
 
         let newPlayer = NSLocalizedString("new player", comment: "New player")
         let enterPlayerName = NSLocalizedString("input name", comment: "Enter the player name")
 
-        let alert = UIAlertController(title: newPlayer, message: enterPlayerName, preferredStyle: .Alert)
+        let alert = UIAlertController(title: newPlayer, message: enterPlayerName, preferredStyle: .alert)
 
-        alert.addTextFieldWithConfigurationHandler {(textField) -> Void in
-            textField.autocapitalizationType = .Words
+        alert.addTextField {(textField) -> Void in
+            textField.autocapitalizationType = .words
         }
 
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
             (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             let name = textField.text!
@@ -59,17 +60,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // Update Table Data
                 self.tabletView.beginUpdates()
                 let lastRow = DAO.instance.players.count - 1
-                let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
-                self.tabletView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                let indexPath = IndexPath(row: lastRow, section: 0)
+                self.tabletView.insertRows(at: [indexPath], with: .automatic)
                 self.tabletView.endUpdates()
             }
 
         }))
 
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func newGame(sender: UIButton) {
+    @IBAction func newGame(_ sender: UIButton) {
 
         let newGame = NSLocalizedString("new game", comment: "New Game")
         let newGameMessage = NSLocalizedString("new game message", comment: "Are you sure to start a new Game?")
@@ -77,72 +78,72 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let yes = NSLocalizedString("yes", comment: "Yes")
         let cancel = NSLocalizedString("cancel", comment: "Cancel")
 
-        let alert = UIAlertController(title: newGame, message: newGameMessage, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: newGame, message: newGameMessage, preferredStyle: .actionSheet)
 
-        let YesAction = UIAlertAction(title: yes, style: .Destructive, handler: {
+        let YesAction = UIAlertAction(title: yes, style: .destructive, handler: {
             (action) -> Void in
             DAO.instance.newGame()
             self.tabletView.reloadData()
         })
-        let CancelAction = UIAlertAction(title: cancel, style: .Cancel, handler: nil)
+        let CancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
 
         alert.addAction(YesAction)
         alert.addAction(CancelAction)
 
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayer", forIndexPath: indexPath) as! PlayerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellPlayer", for: indexPath) as! PlayerTableViewCell
 
 
-        cell.player = DAO.instance.players[indexPath.row]
+        cell.player = DAO.instance.players[(indexPath as NSIndexPath).row]
         cell.labelNome.text = cell.player!.name
         cell.labelPoints.text = "\(cell.player!.points)"
 
         cell.buttonPlayOrRun.selectedSegmentIndex = cell.player!.play ? 0 : 1
-        cell.buttonPlayOrRun.setEnabled(cell.player!.points == 1 ? false : true, forSegmentAtIndex: 1)
+        cell.buttonPlayOrRun.setEnabled(cell.player!.points == 1 ? false : true, forSegmentAt: 1)
 
 
-        cell.buttonPlayOrRun.hidden = (cell.player!.points == 0)
+        cell.buttonPlayOrRun.isHidden = (cell.player!.points == 0)
 
         if cell.player!.points == 0 {
-            cell.contentView.backgroundColor = UIColor.lightGrayColor()
+            cell.contentView.backgroundColor = UIColor.lightGray
         } else {
-            cell.contentView.backgroundColor = UIColor.clearColor()
+            cell.contentView.backgroundColor = UIColor.clear
         }
 
 
         return cell
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DAO.instance.players.count
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.tabletView.reloadData()
     }
 
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             deletePlayerIndexPath = indexPath
-            let playerToDelete = DAO.instance.players[indexPath.row]
+            let playerToDelete = DAO.instance.players[(indexPath as NSIndexPath).row]
             confirmDelete(playerToDelete)
         }
     }
 
-    func handleDeletePlayer(alertAction: UIAlertAction!) -> Void {
+    func handleDeletePlayer(_ alertAction: UIAlertAction!) -> Void {
         if let indexPath = deletePlayerIndexPath {
             tabletView.beginUpdates()
 
-            let playerToDelete = DAO.instance.players[indexPath.row]
+            let playerToDelete = DAO.instance.players[(indexPath as NSIndexPath).row]
 
             DAO.instance.delPlayer(playerToDelete)
 
             // Note that indexPath is wrapped in an array:  [indexPath]
-            tabletView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            tabletView.deleteRows(at: [indexPath], with: .automatic)
 
             deletePlayerIndexPath = nil
 
@@ -150,22 +151,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         tabletView.setEditing(editing, animated: true)
     }
 
-    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        let playerToMove = DAO.instance.players[fromIndexPath.row]
-        DAO.instance.players.removeAtIndex(fromIndexPath.row)
-        DAO.instance.players.insert(playerToMove, atIndex: toIndexPath.row)
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
+        let playerToMove = DAO.instance.players[(fromIndexPath as NSIndexPath).row]
+        DAO.instance.players.remove(at: (fromIndexPath as NSIndexPath).row)
+        DAO.instance.players.insert(playerToMove, at: (toIndexPath as NSIndexPath).row)
     }
 
-    func confirmDelete(player: Player) {
+    func confirmDelete(_ player: Player) {
 
         let deletePlayer = NSLocalizedString("delete player", comment: "Delete Player")
         let deletePlayerMessage = String.localizedStringWithFormat(NSLocalizedString("delete player message", comment: "Delete Player Message"), player.name)
@@ -173,42 +174,41 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let delete = NSLocalizedString("delete", comment: "Delete")
         let cancel = NSLocalizedString("cancel", comment: "Cancel")
 
-        let alert = UIAlertController(title: deletePlayer, message: deletePlayerMessage, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: deletePlayer, message: deletePlayerMessage, preferredStyle: .actionSheet)
 
-        let DeleteAction = UIAlertAction(title: delete, style: .Destructive, handler: handleDeletePlayer)
-        let CancelAction = UIAlertAction(title: cancel, style: .Cancel, handler: nil)
+        let DeleteAction = UIAlertAction(title: delete, style: .destructive, handler: handleDeletePlayer)
+        let CancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
 
         alert.addAction(DeleteAction)
         alert.addAction(CancelAction)
 
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Force recalculate play will play
         DAO.instance.invalidate()
     }
 
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let str = NSLocalizedString("no players", comment: "No players")
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
 
-    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let str = NSLocalizedString("add some players", comment: "Add some players")
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
         return NSAttributedString(string: str, attributes: attrs)
     }
 
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         return UIImage(named: "AppIcon60x60")
     }
 
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
-
 
 
 }

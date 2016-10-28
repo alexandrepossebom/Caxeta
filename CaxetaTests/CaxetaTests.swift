@@ -64,17 +64,17 @@ class CaxetaTests: XCTestCase {
 		XCTAssertTrue(DAO.instance.getPlayersWillPlay().count == 1)
 	}
 
-	func randomAlphanumericString(length: Int) -> String {
+	func randomAlphanumericString(_ length: Int) -> String {
 		let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".characters
 		let lettersLength = UInt32(letters.count)
 
 		let randomCharacters = (0..<length).map { _ -> String in
 			let offset = Int(arc4random_uniform(lettersLength))
-			let c = letters[letters.startIndex.advancedBy(offset)]
+			let c = letters[letters.index(letters.startIndex, offsetBy: offset)]
 			return String(c)
 		}
 
-		return randomCharacters.joinWithSeparator("")
+		return randomCharacters.joined(separator: "")
 	}
 
 }

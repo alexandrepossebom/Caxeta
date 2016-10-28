@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Player: CustomStringConvertible {
+open class Player: CustomStringConvertible {
 	var name: String
     var play: Bool = true
 
@@ -32,7 +32,7 @@ public class Player: CustomStringConvertible {
 		self.points = points
 	}
 
-	public var description: String {
+	open var description: String {
 		get {
 			return "\(name) : \(points) : \(play)"
 		}

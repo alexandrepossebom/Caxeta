@@ -16,7 +16,7 @@ class PlayerTableViewCell: UITableViewCell {
 	@IBOutlet weak var labelNome: UILabel!
 	@IBOutlet weak var labelPoints: UILabel!
 
-	@IBAction func changedPlayOrRun(sender: UISegmentedControl) {
+	@IBAction func changedPlayOrRun(_ sender: UISegmentedControl) {
 		let play = (sender.selectedSegmentIndex == 0)
 		_ = DAO.instance.players.map {(player) -> Player in
 			if player.name == self.player?.name {

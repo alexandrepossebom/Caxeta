@@ -21,44 +21,44 @@ class GameViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmpty
 		self.tableView.tableFooterView = UIView()
 	}
 
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
     }
 
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
-		let cell = tableView.dequeueReusableCellWithIdentifier("CellPlayerGame", forIndexPath: indexPath) as! GameTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "CellPlayerGame", for: indexPath) as! GameTableViewCell
 
 		cell.gameViewController = self
-		cell.player = DAO.instance.getPlayersWillPlay() [indexPath.row]
+		cell.player = DAO.instance.getPlayersWillPlay() [(indexPath as NSIndexPath).row]
 		cell.labelNome.text = cell.player!.name
 
 		return cell
 	}
 
-	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return DAO.instance.getPlayersWillPlay().count
 	}
 
-	func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+	func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
 		let str = NSLocalizedString("more players", comment: "More Players")
-		let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+		let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
 		return NSAttributedString(string: str, attributes: attrs)
 	}
 
-	func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+	func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
 		let str = NSLocalizedString("more players needed", comment: "More players needed")
-		let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+		let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
 		return NSAttributedString(string: str, attributes: attrs)
 	}
 
-	func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+	func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
 		return UIImage(named: "AppIcon60x60")
 	}
 
-    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
        return false
     }
 

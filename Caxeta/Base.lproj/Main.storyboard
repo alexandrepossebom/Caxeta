@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CZB-v6-yWj">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CZB-v6-yWj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Cacheta-->
@@ -16,44 +20,38 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5WK-Od-HpZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5WK-Od-HpZ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPlayer" id="LRI-Dx-RCQ" customClass="PlayerTableViewCell" customModule="Caxeta" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LRI-Dx-RCQ" id="2i3-eQ-TSR">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-ky-5Fw">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <rect key="frame" x="111" y="11" width="18" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="111" y="11" width="18" height="20.5"/>
-                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-sA-peS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-sA-peS">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kce-z1-PGm">
-                                                    <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                                    <rect key="frame" x="140" y="8" width="81" height="29"/>
                                                     <segments>
                                                         <segment title="Play"/>
                                                         <segment title="Run"/>
                                                     </segments>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="140" y="8" width="81" height="29"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="changedPlayOrRun:" destination="LRI-Dx-RCQ" eventType="valueChanged" id="6O1-3q-ajc"/>
                                                     </connections>
@@ -74,10 +72,10 @@
                                                     <exclude reference="kce-z1-PGm"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Jmg-Vd-GSp"/>
-                                                    <exclude reference="wGx-gh-n2R"/>
                                                     <exclude reference="llr-QT-0Nb"/>
                                                     <exclude reference="mJd-Ku-05D"/>
+                                                    <exclude reference="Jmg-Vd-GSp"/>
+                                                    <exclude reference="wGx-gh-n2R"/>
                                                     <exclude reference="ohQ-Pg-eBk"/>
                                                     <exclude reference="xMV-1N-Tsn"/>
                                                 </mask>
@@ -89,10 +87,10 @@
                                                     <include reference="kce-z1-PGm"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Jmg-Vd-GSp"/>
-                                                    <include reference="wGx-gh-n2R"/>
                                                     <include reference="llr-QT-0Nb"/>
                                                     <include reference="mJd-Ku-05D"/>
+                                                    <include reference="Jmg-Vd-GSp"/>
+                                                    <include reference="wGx-gh-n2R"/>
                                                     <include reference="ohQ-Pg-eBk"/>
                                                     <include reference="xMV-1N-Tsn"/>
                                                 </mask>
@@ -110,7 +108,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="KFe-lo-hL3"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohr-hA-gri">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohr-hA-gri">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Start Round"/>
                                 <attributedString key="userComments">
@@ -125,7 +123,7 @@
                                     <segue destination="TSo-69-HMd" kind="show" id="Gwh-pa-rpv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffN-Q1-ziq">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffN-Q1-ziq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="New Game"/>
                                 <attributedString key="userComments">
@@ -141,7 +139,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ffN-Q1-ziq" secondAttribute="bottom" constant="8" id="3fj-vz-Tjn"/>
                             <constraint firstItem="5WK-Od-HpZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6R5-Ve-zff"/>
@@ -194,7 +192,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tabletView" destination="5WK-Od-HpZ" id="Q7z-Y9-cgB"/>
                     </connections>
@@ -208,25 +205,28 @@
             <objects>
                 <tableViewController id="TSo-69-HMd" customClass="GameViewController" customModule="Caxeta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oMu-mb-0rL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPlayerGame" id="2k0-nJ-VQ6" customClass="GameTableViewCell" customModule="Caxeta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2k0-nJ-VQ6" id="QZF-DT-w6e">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-0C-Llg">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-0C-Llg">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <state key="normal" title="Winner"/>
                                             <connections>
                                                 <action selector="buttonWin:" destination="2k0-nJ-VQ6" eventType="touchUpInside" id="xbK-v0-EZb"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="806-bt-7cm">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="806-bt-7cm">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -242,10 +242,10 @@
                                             <exclude reference="806-bt-7cm"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="h1e-4n-po6"/>
-                                            <exclude reference="hc7-LA-IYG"/>
                                             <exclude reference="P3M-Zf-uYc"/>
                                             <exclude reference="bOk-zg-Yq3"/>
+                                            <exclude reference="h1e-4n-po6"/>
+                                            <exclude reference="hc7-LA-IYG"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -254,10 +254,10 @@
                                             <include reference="806-bt-7cm"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="h1e-4n-po6"/>
-                                            <include reference="hc7-LA-IYG"/>
                                             <include reference="P3M-Zf-uYc"/>
                                             <include reference="bOk-zg-Yq3"/>
+                                            <include reference="h1e-4n-po6"/>
+                                            <include reference="hc7-LA-IYG"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -271,7 +271,6 @@
                             <outlet property="delegate" destination="TSo-69-HMd" id="wvp-rb-PfM"/>
                         </connections>
                     </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkw-nS-Jfm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +281,6 @@
             <objects>
                 <navigationController id="CZB-v6-yWj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R38-lf-ch7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
