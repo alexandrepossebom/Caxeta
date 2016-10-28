@@ -1,15 +1,15 @@
 //
-//  CaxetaTests.swift
-//  CaxetaTests
+//  CachetaTests.swift
+//  CachetaTests
 //
 //  Created by Alexandre Possebom on 15/01/16.
 //  Copyright © 2016 Alexandre Possebom. All rights reserved.
 //
 
 import XCTest
-@testable import Caxeta
+@testable import Cacheta
 
-class CaxetaTests: XCTestCase {
+class CachetaTests: XCTestCase {
 
 	override func setUp() {
 		super.setUp()

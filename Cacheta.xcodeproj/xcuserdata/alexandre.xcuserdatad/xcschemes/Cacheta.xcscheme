@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AC8372941C316152007578DA"
-               BuildableName = "Caxeta.app"
-               BlueprintName = "Caxeta"
-               ReferencedContainer = "container:Caxeta.xcodeproj">
+               BuildableName = "Cacheta.app"
+               BlueprintName = "Cacheta"
+               ReferencedContainer = "container:Cacheta.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AC538D481C4974C300373095"
-               BuildableName = "CaxetaTests.xctest"
-               BlueprintName = "CaxetaTests"
-               ReferencedContainer = "container:Caxeta.xcodeproj">
+               BuildableName = "CachetaTests.xctest"
+               BlueprintName = "CachetaTests"
+               ReferencedContainer = "container:Cacheta.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC8372941C316152007578DA"
-            BuildableName = "Caxeta.app"
-            BlueprintName = "Caxeta"
-            ReferencedContainer = "container:Caxeta.xcodeproj">
+            BuildableName = "Cacheta.app"
+            BlueprintName = "Cacheta"
+            ReferencedContainer = "container:Cacheta.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC8372941C316152007578DA"
-            BuildableName = "Caxeta.app"
-            BlueprintName = "Caxeta"
-            ReferencedContainer = "container:Caxeta.xcodeproj">
+            BuildableName = "Cacheta.app"
+            BlueprintName = "Cacheta"
+            ReferencedContainer = "container:Cacheta.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC8372941C316152007578DA"
-            BuildableName = "Caxeta.app"
-            BlueprintName = "Caxeta"
-            ReferencedContainer = "container:Caxeta.xcodeproj">
+            BuildableName = "Cacheta.app"
+            BlueprintName = "Cacheta"
+            ReferencedContainer = "container:Cacheta.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  Caxeta
+//  Cacheta
 //
 //  Created by Alexandre Possebom on 28/12/15.
 //  Copyright © 2015 Alexandre Possebom. All rights reserved.

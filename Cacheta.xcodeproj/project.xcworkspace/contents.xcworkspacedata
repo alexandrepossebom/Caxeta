@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Caxeta.xcodeproj">
+      location = "self:/Users/alexandre/Devel/iOS/Cacheta/Cacheta.xcodeproj">
    </FileRef>
 </Workspace>

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC11464E1C354DB7002F6596 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11464D1C354DB7002F6596 /* DAO.swift */; };
-		AC538D4C1C4974C300373095 /* CaxetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC538D4B1C4974C300373095 /* CaxetaTests.swift */; };
+		AC538D4C1C4974C300373095 /* CachetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC538D4B1C4974C300373095 /* CachetaTests.swift */; };
 		AC8372991C316152007578DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8372981C316152007578DA /* AppDelegate.swift */; };
 		AC83729B1C316152007578DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83729A1C316152007578DA /* ViewController.swift */; };
 		AC83729E1C316152007578DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC83729C1C316152007578DA /* Main.storyboard */; };
@@ -28,16 +28,16 @@
 			containerPortal = AC83728D1C316152007578DA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AC8372941C316152007578DA;
-			remoteInfo = Caxeta;
+			remoteInfo = Cacheta;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AC11464D1C354DB7002F6596 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
-		AC538D491C4974C300373095 /* CaxetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaxetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC538D4B1C4974C300373095 /* CaxetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaxetaTests.swift; sourceTree = "<group>"; };
+		AC538D491C4974C300373095 /* CachetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CachetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC538D4B1C4974C300373095 /* CachetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachetaTests.swift; sourceTree = "<group>"; };
 		AC538D4D1C4974C300373095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC8372951C316152007578DA /* Caxeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caxeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8372951C316152007578DA /* Cacheta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cacheta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8372981C316152007578DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC83729A1C316152007578DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC83729D1C316152007578DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		ACB83C341C3AC96F00DB3603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ACB83C381C3AC9CA00DB3603 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		ACC0C6381C42EE3A007E0138 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
-		ACC0C6391C43B455007E0138 /* Caxeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Caxeta-Bridging-Header.h"; sourceTree = "<group>"; };
+		ACC0C6391C43B455007E0138 /* Cacheta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cacheta-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACC0C63A1C43B456007E0138 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		ACC0C63B1C43B456007E0138 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -75,20 +75,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC538D4A1C4974C300373095 /* CaxetaTests */ = {
+		AC538D4A1C4974C300373095 /* CachetaTests */ = {
 			isa = PBXGroup;
 			children = (
-				AC538D4B1C4974C300373095 /* CaxetaTests.swift */,
+				AC538D4B1C4974C300373095 /* CachetaTests.swift */,
 				AC538D4D1C4974C300373095 /* Info.plist */,
 			);
-			path = CaxetaTests;
+			name = CachetaTests;
+			path = CachetaTests;
 			sourceTree = "<group>";
 		};
 		AC83728C1C316152007578DA = {
 			isa = PBXGroup;
 			children = (
-				AC8372971C316152007578DA /* Caxeta */,
-				AC538D4A1C4974C300373095 /* CaxetaTests */,
+				AC8372971C316152007578DA /* Cacheta */,
+				AC538D4A1C4974C300373095 /* CachetaTests */,
 				AC8372961C316152007578DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,13 +97,13 @@
 		AC8372961C316152007578DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC8372951C316152007578DA /* Caxeta.app */,
-				AC538D491C4974C300373095 /* CaxetaTests.xctest */,
+				AC8372951C316152007578DA /* Cacheta.app */,
+				AC538D491C4974C300373095 /* CachetaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC8372971C316152007578DA /* Caxeta */ = {
+		AC8372971C316152007578DA /* Cacheta */ = {
 			isa = PBXGroup;
 			children = (
 				ACC0C63A1C43B456007E0138 /* UIScrollView+EmptyDataSet.h */,
@@ -119,17 +120,18 @@
 				ACC1E62E1C35B521005B3DB1 /* GameViewController.swift */,
 				ACC1E6301C35B899005B3DB1 /* GameTableViewCell.swift */,
 				ACB83C351C3AC96F00DB3603 /* Localizable.strings */,
-				ACC0C6391C43B455007E0138 /* Caxeta-Bridging-Header.h */,
+				ACC0C6391C43B455007E0138 /* Cacheta-Bridging-Header.h */,
 			);
-			path = Caxeta;
+			name = Cacheta;
+			path = Cacheta;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC538D481C4974C300373095 /* CaxetaTests */ = {
+		AC538D481C4974C300373095 /* CachetaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC538D521C4974C300373095 /* Build configuration list for PBXNativeTarget "CaxetaTests" */;
+			buildConfigurationList = AC538D521C4974C300373095 /* Build configuration list for PBXNativeTarget "CachetaTests" */;
 			buildPhases = (
 				AC538D451C4974C300373095 /* Sources */,
 				AC538D461C4974C300373095 /* Frameworks */,
@@ -140,14 +142,14 @@
 			dependencies = (
 				AC538D4F1C4974C300373095 /* PBXTargetDependency */,
 			);
-			name = CaxetaTests;
-			productName = CaxetaTests;
-			productReference = AC538D491C4974C300373095 /* CaxetaTests.xctest */;
+			name = CachetaTests;
+			productName = CachetaTests;
+			productReference = AC538D491C4974C300373095 /* CachetaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AC8372941C316152007578DA /* Caxeta */ = {
+		AC8372941C316152007578DA /* Cacheta */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC8372A71C316152007578DA /* Build configuration list for PBXNativeTarget "Caxeta" */;
+			buildConfigurationList = AC8372A71C316152007578DA /* Build configuration list for PBXNativeTarget "Cacheta" */;
 			buildPhases = (
 				AC8372911C316152007578DA /* Sources */,
 				AC8372921C316152007578DA /* Frameworks */,
@@ -158,9 +160,9 @@
 			);
 			dependencies = (
 			);
-			name = Caxeta;
-			productName = Caxeta;
-			productReference = AC8372951C316152007578DA /* Caxeta.app */;
+			name = Cacheta;
+			productName = Cacheta;
+			productReference = AC8372951C316152007578DA /* Cacheta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC8372901C316152007578DA /* Build configuration list for PBXProject "Caxeta" */;
+			buildConfigurationList = AC8372901C316152007578DA /* Build configuration list for PBXProject "Cacheta" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -200,8 +202,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC8372941C316152007578DA /* Caxeta */,
-				AC538D481C4974C300373095 /* CaxetaTests */,
+				AC8372941C316152007578DA /* Cacheta */,
+				AC538D481C4974C300373095 /* CachetaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC538D4C1C4974C300373095 /* CaxetaTests.swift in Sources */,
+				AC538D4C1C4974C300373095 /* CachetaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +274,7 @@
 /* Begin PBXTargetDependency section */
 		AC538D4F1C4974C300373095 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AC8372941C316152007578DA /* Caxeta */;
+			target = AC8372941C316152007578DA /* Cacheta */;
 			targetProxy = AC538D4E1C4974C300373095 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -312,12 +314,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CaxetaTests/Info.plist;
+				INFOPLIST_FILE = CachetaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.CaxetaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.CachetaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caxeta.app/Caxeta";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cacheta.app/Cacheta";
 			};
 			name = Debug;
 		};
@@ -325,12 +327,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CaxetaTests/Info.plist;
+				INFOPLIST_FILE = CachetaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.CaxetaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.CachetaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caxeta.app/Caxeta";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cacheta.app/Cacheta";
 			};
 			name = Release;
 		};
@@ -430,12 +432,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INFOPLIST_FILE = Caxeta/Info.plist;
+				INFOPLIST_FILE = Cacheta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Caxeta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Cacheta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Caxeta/Caxeta-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cacheta/Cacheta-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -448,12 +450,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Caxeta/Info.plist;
+				INFOPLIST_FILE = Cacheta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Caxeta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Cacheta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Caxeta/Caxeta-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cacheta/Cacheta-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -461,7 +463,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC538D521C4974C300373095 /* Build configuration list for PBXNativeTarget "CaxetaTests" */ = {
+		AC538D521C4974C300373095 /* Build configuration list for PBXNativeTarget "CachetaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC538D501C4974C300373095 /* Debug */,
@@ -470,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC8372901C316152007578DA /* Build configuration list for PBXProject "Caxeta" */ = {
+		AC8372901C316152007578DA /* Build configuration list for PBXProject "Cacheta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC8372A51C316152007578DA /* Debug */,
@@ -479,7 +481,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC8372A71C316152007578DA /* Build configuration list for PBXNativeTarget "Caxeta" */ = {
+		AC8372A71C316152007578DA /* Build configuration list for PBXNativeTarget "Cacheta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC8372A81C316152007578DA /* Debug */,
