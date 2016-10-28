@@ -81,7 +81,6 @@
 				AC538D4B1C4974C300373095 /* CachetaTests.swift */,
 				AC538D4D1C4974C300373095 /* Info.plist */,
 			);
-			name = CachetaTests;
 			path = CachetaTests;
 			sourceTree = "<group>";
 		};
@@ -122,7 +121,6 @@
 				ACB83C351C3AC96F00DB3603 /* Localizable.strings */,
 				ACC0C6391C43B455007E0138 /* Cacheta-Bridging-Header.h */,
 			);
-			name = Cacheta;
 			path = Cacheta;
 			sourceTree = "<group>";
 		};
@@ -185,6 +183,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 768CJJBSVP;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -431,10 +430,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 768CJJBSVP;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Cacheta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Cacheta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.cacheta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cacheta/Cacheta-Bridging-Header.h";
@@ -450,9 +450,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 768CJJBSVP;
 				INFOPLIST_FILE = Cacheta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.Cacheta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.possebom.cacheta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cacheta/Cacheta-Bridging-Header.h";
